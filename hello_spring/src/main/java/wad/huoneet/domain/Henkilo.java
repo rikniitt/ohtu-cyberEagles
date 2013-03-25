@@ -28,7 +28,7 @@ public class Henkilo implements Serializable {
     @Pattern(regexp="[\\w\\s\\.\\,]*", message="Osoite saa sisältää vain kirjaimia, numeroita, pisteitä, pilkkuja ja välilyöntejä")
     private String osoite;
     
-    @Size(min=8, max=12, message="Puhelinnumero saa olla 4-12 merkkiä")
+    @Size(min=8, max=12, message="Puhelinnumero saa olla 8-12 merkkiä")
     @Pattern(regexp="[0-9]*", message="Puhelinnumero saa sisältää numeroita")
     private String puhNumero;
 
