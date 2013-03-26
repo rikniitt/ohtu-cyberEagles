@@ -11,8 +11,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HelloController {
 
-    @RequestMapping("index")
+    @RequestMapping("*")
     public String index() {
+        return "etusivu";
+    }
+    
+    
+    @RequestMapping("lista")
+    public String lista() {
         return "lista";
     }
 }
