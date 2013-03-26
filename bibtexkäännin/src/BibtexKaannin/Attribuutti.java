@@ -8,16 +8,26 @@ package BibtexKaannin;
  *
  * @author olzraiti
  */
-public abstract class Attribuutti {
+public class Attribuutti {
 
-    public String arvo;
+    private String nimi;
+    private String arvo;
 
-    public Attribuutti (String arvo) {
+    public Attribuutti (String nimi, String arvo) {
+        this.nimi = nimi;
         this.arvo = arvo;
     }
     
     @Override
     public String toString(){
+        return arvo;
+    }
+    
+    public String getNimi(){
+        return nimi;
+    }
+    
+    public String getArvo(){
         return arvo;
     }
 }
