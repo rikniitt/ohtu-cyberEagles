@@ -38,18 +38,19 @@ public class BibtexKaannin {
         for (int i = 0; i < k.attribuutit.length; i++) {
             if (k.attribuutit[i].getNimi().equals("id")) {
                 kaannos = kaannos + k.attribuutit[i] + ",\n";
+                break;
             }
-        
+        }
         //muiden attribuuttien järjestyksellä ei väliä
-        for (i = 0; i < k.attribuutit.length; i++) {
-                kaannos = kaannos + k.attribuutit[i].getNimi() + " = " + k.attribuutit[i] + ",\n";
+        for (int i = 0; i < k.attribuutit.length; i++) {
+                if (!k.attribuutit[i].getNimi().equals("id"))
+                    kaannos = kaannos + k.attribuutit[i].getNimi() + " = " + k.attribuutit[i] + ",\n";
         }
         
         kaannos = kaannos + "}";
 
         
 
-        }
         return kaannos;
     }
 }
