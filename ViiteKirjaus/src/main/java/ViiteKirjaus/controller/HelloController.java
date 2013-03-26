@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
@@ -33,14 +34,14 @@ public class HelloController {
     }
     
     @RequestMapping(value = "kirja/lisaa", method = RequestMethod.POST)
-    public String kirjaLisaaKasittele(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView kirjaLisaaKasittele(HttpServletRequest request, HttpServletResponse response) {
         String ID = request.getParameter("ID");
         String kirjailija = request.getParameter("kirjailija");
         String titteli = request.getParameter("titteli");
         String vuosi = request.getParameter("vuosi");
         String julkaisija = request.getParameter("julkaisija");
         
-        Kirja k = new Kirja(
+        Kirja kirja = new Kirja(
                 new Attribuutti[]{
                     new Attribuutti("id", ID),
                     new Attribuutti("author", kirjailija),
@@ -49,11 +50,15 @@ public class HelloController {
                     new Attribuutti("publisher", julkaisija)
                 });
 
-        BibtexKaannin b = new BibtexKaannin();
-        String kkk = b.kaanna(k);
-        System.out.println(kkk);
+        BibtexKaannin kaannin = new BibtexKaannin();
+        String parsittu = kaannin.kaanna(kirja);
+        System.out.println(parsittu);
    
-        return "kirja";
+        
+        ModelAndView result = new ModelAndView("kirja");
+        result.addObject("parsed", parsittu);
+        return result;
+        
     }
     
     

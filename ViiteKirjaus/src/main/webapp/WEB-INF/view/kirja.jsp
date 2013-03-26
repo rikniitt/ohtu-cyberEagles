@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,10 @@
 	  <label>julkaisija: <input type="text" name="julkaisija" /></label><p>
 	  <input type="submit" />
 	</form>
+        
+        <p>
+            <pre>${parsed}</pre> 
+        </p>
     </body>
 </html>
 
