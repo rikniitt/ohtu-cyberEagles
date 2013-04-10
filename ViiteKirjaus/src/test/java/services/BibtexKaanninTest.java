@@ -57,7 +57,7 @@ public class BibtexKaanninTest {
     }
 
     @Test
-    public void testKaanna() {
+    public void kaannaToimii() {
         
         assertEquals(
                 "@book{Pek123,\n" +
@@ -67,6 +67,16 @@ public class BibtexKaanninTest {
                 "publisher = WSOY,\n" +
                 "}"
                 , bk.kaanna(k));
+    }
+    
+    @Test
+    public void kaannaSivuAttribuuttiToimii() {
+        
+        String s = "12--23";
+        String s2 = "12-23";
+        
+        assertEquals("12--23", bk.kaannaSivuAttribuuttiOikein(s));
+        assertEquals("12--23", bk.kaannaSivuAttribuuttiOikein(s2));
     }
     
     @Test
