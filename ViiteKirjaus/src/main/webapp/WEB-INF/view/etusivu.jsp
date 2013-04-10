@@ -7,7 +7,7 @@
         <title>Etusivu</title>
     </head>
     <body>
-        <h1>Arton viite kirjaus</h1>
+        <h1 id="welcome-text">Arton viite kirjaus</h1>
 
 
     </body>
