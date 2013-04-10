@@ -20,7 +20,8 @@ public class BibtexKaannin {
                     new Attribuutti("author", "Pekka Joki"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),
-                    new Attribuutti("publisher", "WSOY")
+                    new Attribuutti("publisher", "WSOY"),
+                    new Attribuutti("asd", " ")
                 });
 
         BibtexKaannin b = new BibtexKaannin();
@@ -28,12 +29,6 @@ public class BibtexKaannin {
         System.out.println(kkk);
     }
 
-//    @book{Martin09,
-//author = {Martin, Robert},
-//title = {Clean Code: A Handbook of Agile Software Craftsmanship},
-//year = {2008},
-//publisher = {Prentice Hall},
-//}
     public String kaanna(Kirja k) {
         String kaannos = "@book{";
 
