@@ -2,9 +2,9 @@ package ViiteKirjaus.controller;
 
 
 
-import ViiteKirjaus.domain.bibtexkaannin.Attribuutti;
-import ViiteKirjaus.domain.bibtexkaannin.BibtexKaannin;
-import ViiteKirjaus.domain.bibtexkaannin.Kirja;
+import ViiteKirjaus.domain.Attribuutti;
+import services.BibtexKaannin;
+import ViiteKirjaus.domain.Kirja;
 import java.io.IOException;
 import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
