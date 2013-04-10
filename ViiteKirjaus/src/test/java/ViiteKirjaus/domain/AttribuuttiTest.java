@@ -40,6 +40,7 @@ public class AttribuuttiTest {
     public void tearDown() {
     }
     
+    @Test
     public void konstruktoriToimii() {
         
         a = new Attribuutti("year", "2013");
@@ -48,17 +49,20 @@ public class AttribuuttiTest {
         assertEquals("2013", a.getArvo());
     }
 
+    @Test
     public void getNimiToimii() {
         
         assertEquals("year", a.getNimi());
     }
     
+    @Test
     public void getArvoToimii() {
         
         assertEquals("2013", a.getArvo());
         
     }
     
+    @Test
     public void toStringToimii() {
         
         assertEquals("2013", a.toString());
