@@ -24,9 +24,7 @@ public class Kirja {
                 karsinta.add(a);
             }
         }
-        System.out.println(karsinta.size());
         this.attribuutit =  karsinta.toArray(new Attribuutti[karsinta.size()]);
-        System.out.println(this.attribuutit.length);
     }
     
     public Attribuutti[] getAttribuutit(){
