@@ -57,7 +57,7 @@ public class BibtexKaanninTest {
     }
 
     @Test
-    public void testKaanna() {
+    public void kaannaToimii() {
         
         assertEquals(
                 "@book{Pek123,\n" +
@@ -70,10 +70,19 @@ public class BibtexKaanninTest {
     }
     
     @Test
+    public void kaannaSivuAttribuuttiToimii() {
+        
+        String s = "12--23";
+        String s2 = "12-23";
+        
+        assertEquals("12--23", bk.kaannaSivuAttribuuttiOikein(s));
+        assertEquals("12--23", bk.kaannaSivuAttribuuttiOikein(s2));
+    }
+    
+    @Test
     public void toimiiVaikkaIdEiAnnetaEnsimmaisena() {
         
         a = new Attribuutti[]{
-                    new Attribuutti("id", "Pek123"),
                     new Attribuutti("author", "Pekka Joki"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),

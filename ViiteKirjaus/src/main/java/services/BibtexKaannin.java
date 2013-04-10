@@ -20,20 +20,16 @@ public class BibtexKaannin {
                     new Attribuutti("author", "Pekka Joki"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),
-                    new Attribuutti("publisher", "WSOY")
+                    new Attribuutti("publisher", "WSOY"),
+                    new Attribuutti("asd", " "),
+                    new Attribuutti("pages", "123-124")
                 });
-
+//
         BibtexKaannin b = new BibtexKaannin();
         String kkk = b.kaanna(k);
         System.out.println(kkk);
     }
 
-//    @book{Martin09,
-//author = {Martin, Robert},
-//title = {Clean Code: A Handbook of Agile Software Craftsmanship},
-//year = {2008},
-//publisher = {Prentice Hall},
-//}
     public String kaanna(Kirja k) {
         String kaannos = "@book{";
 
@@ -46,8 +42,13 @@ public class BibtexKaannin {
         }
         //muiden attribuuttien järjestyksellä ei väliä
         for (int i = 0; i < k.getAttribuutit().length; i++) {
-                if (!k.getAttribuutit()[i].getNimi().equals("id"))
-                    kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + k.getAttribuutit()[i] + ",\n";
+                if (!k.getAttribuutit()[i].getNimi().equals("id")){
+                    if (k.getAttribuutit()[i].getNimi().equals("pages")){
+                        kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + kaannaSivuAttribuuttiOikein(k.getAttribuutit()[i].getArvo()) + ",\n";
+                    }
+                    else
+                        kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + k.getAttribuutit()[i] + ",\n";
+                }
         }
         
         kaannos = kaannos + "}";
@@ -55,5 +56,25 @@ public class BibtexKaannin {
         
 
         return kaannos;
+    }
+    
+    //12-23    12--23
+    
+    public String kaannaSivuAttribuuttiOikein(String s){
+        String korjattu = "";
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '-'){
+                if (s.charAt(i + 1) != '-'){
+                    for (int j = 0; j < s.length(); j++){
+                        if (j == i)
+                            korjattu += "-";
+                        korjattu += s.charAt(j);
+                    }
+                }
+                else
+                    return s;
+            }
+        }
+        return korjattu;
     }
 }
