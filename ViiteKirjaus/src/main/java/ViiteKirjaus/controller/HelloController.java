@@ -3,14 +3,12 @@ package ViiteKirjaus.controller;
 
 
 import ViiteKirjaus.domain.Attribuutti;
-import services.BibtexKaannin;
 import ViiteKirjaus.domain.Viite;
-import java.io.IOException;
-import java.util.Arrays;
+import ViiteKirjaus.services.BibtexKaannin;
+import ViiteKirjaus.services.data_access.ViiteDao;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,8 +16,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-    
-    @Autowired ApplicationContext appilicationContext;
+//
+//    @Autowired ViiteDao dao;
 
     @RequestMapping("*")
     public String index() {
@@ -27,9 +25,19 @@ public class HelloController {
     }
     
     
+//    @RequestMapping("lista")
+//    public ModelAndView lista() {
+//        
+//        ModelAndView result = new ModelAndView("lista");
+//        result.addObject("viitteet", dao.listAll());
+//        return result;
+//        
+//    }
+    
     @RequestMapping("lista")
     public String lista() {
         return "lista";
+        
     }
     
     @RequestMapping("kirja/lisaa")
@@ -54,6 +62,10 @@ public class HelloController {
                     new Attribuutti("publisher", julkaisija)
                 });
 
+        
+        //dao.add(kirja);
+        
+        
         BibtexKaannin kaannin = new BibtexKaannin();
         String parsittu = kaannin.kaanna(kirja);
         System.out.println(parsittu);

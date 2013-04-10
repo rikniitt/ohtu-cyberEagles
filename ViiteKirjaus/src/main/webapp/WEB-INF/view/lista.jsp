@@ -20,13 +20,9 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="kirja" items="${kirjat}">
+                <c:forEach var="viite" items="${viiteet}">
                     <tr>
-                        <td>${kirja.ID}</td>
-                        <td>${kirja.kirjoittaja}</td>
-                        <td>${kirja.nimi}</td>
-                        <td>${kirja.vuosi}</td>
-                        <td>${kirja.julkaisija}</td>
+                        <td>viite</td>
                     </tr>
                    
                  </c:forEach>

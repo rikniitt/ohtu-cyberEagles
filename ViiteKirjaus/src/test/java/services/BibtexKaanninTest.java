@@ -8,7 +8,7 @@ import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
-import services.BibtexKaannin;
+import ViiteKirjaus.services.BibtexKaannin;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

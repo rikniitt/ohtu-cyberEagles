@@ -1,4 +1,4 @@
-package services;
+package ViiteKirjaus.services;
 
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
