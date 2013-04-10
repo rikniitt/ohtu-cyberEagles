@@ -36,18 +36,19 @@ public class BibtexKaannin {
         //IDn täytyy olla ensimmäisenä
         for (int i = 0; i < k.getAttribuutit().length; i++) {
             if (k.getAttribuutit()[i].getNimi().equals("id")) {
-                kaannos = kaannos + k.getAttribuutit()[i] + ",\n";
+                kaannos += k.getAttribuutit()[i] + ",\n";
                 break;
             }
         }
         //muiden attribuuttien järjestyksellä ei väliä
         for (int i = 0; i < k.getAttribuutit().length; i++) {
                 if (!k.getAttribuutit()[i].getNimi().equals("id")){
-                    if (k.getAttribuutit()[i].getNimi().equals("pages")){
-                        kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + kaannaSivuAttribuuttiOikein(k.getAttribuutit()[i].getArvo()) + ",\n";
+                    kaannos += k.getAttribuutit()[i].getNimi() + " = {";
+                    if (k.getAttribuutit()[i].getNimi().equals("pages")){                               //käännetään sivuattribuutti oikeaan muotoon
+                        kaannos += kaannaSivuAttribuuttiOikein(k.getAttribuutit()[i].getArvo()) + "},\n";
                     }
                     else
-                        kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + k.getAttribuutit()[i] + ",\n";
+                        kaannos += k.getAttribuutit()[i] + "},\n";
                 }
         }
         
@@ -57,8 +58,6 @@ public class BibtexKaannin {
 
         return kaannos;
     }
-    
-    //12-23    12--23
     
     public String kaannaSivuAttribuuttiOikein(String s){
         String korjattu = "";

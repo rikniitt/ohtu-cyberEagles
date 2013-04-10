@@ -45,7 +45,8 @@ public class BibtexKaanninTest {
                     new Attribuutti("author", "Pekka Joki"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),
-                    new Attribuutti("publisher", "WSOY")};
+                    new Attribuutti("publisher", "WSOY"),
+                    new Attribuutti("pages", "123-124")};
                 
         k = new Viite("book", a);
         
@@ -61,10 +62,11 @@ public class BibtexKaanninTest {
         
         assertEquals(
                 "@book{Pek123,\n" +
-                "author = Pekka Joki,\n" +
-                "title = joku raamattu,\n" +
-                "year = 1920,\n" +
-                "publisher = WSOY,\n" +
+                "author = {Pekka Joki},\n" +
+                "title = {joku raamattu},\n" +
+                "year = {1920},\n" +
+                "publisher = {WSOY},\n" +
+                "pages = {123--124},\n" +
                 "}"
                 , bk.kaanna(k));
     }
@@ -87,16 +89,18 @@ public class BibtexKaanninTest {
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),
                     new Attribuutti("publisher", "WSOY"),
+                    new Attribuutti("pages", "123-124"),
                     new Attribuutti("id", "Pek123")};
                 
         k = new Viite("book", a);
         
         assertEquals(
                 "@book{Pek123,\n" +
-                "author = Pekka Joki,\n" +
-                "title = joku raamattu,\n" +
-                "year = 1920,\n" +
-                "publisher = WSOY,\n" +
+                "author = {Pekka Joki},\n" +
+                "title = {joku raamattu},\n" +
+                "year = {1920},\n" +
+                "publisher = {WSOY},\n" +
+                "pages = {123--124},\n" +
                 "}",
                 bk.kaanna(k));
     }
