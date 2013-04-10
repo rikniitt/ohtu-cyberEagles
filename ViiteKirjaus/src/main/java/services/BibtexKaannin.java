@@ -59,8 +59,6 @@ public class BibtexKaannin {
         return kaannos;
     }
     
-    //12-23    12--23
-    
     public String kaannaSivuAttribuuttiOikein(String s){
         String korjattu = "";
         for (int i = 0; i < s.length(); i++){
