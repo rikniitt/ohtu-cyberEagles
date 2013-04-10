@@ -51,11 +51,26 @@ public class KirjaTest {
                 
         Kirja k = new Kirja(a);
         
-        assertEquals(a[0].getNimi(), a[0].getNimi());
-        assertEquals(a[1].getNimi(), a[1].getNimi());
-        assertEquals(a[2].getNimi(), a[2].getNimi());
-        assertEquals(a[3].getNimi(), a[3].getNimi());
-        assertEquals(a[4].getNimi(), a[4].getNimi());
+        assertEquals(k.getAttribuutit()[0].getNimi(), a[0].getNimi());
+        assertEquals(k.getAttribuutit()[1].getNimi(), a[1].getNimi());
+        assertEquals(k.getAttribuutit()[2].getNimi(), a[2].getNimi());
+        assertEquals(k.getAttribuutit()[3].getNimi(), a[3].getNimi());
+        assertEquals(k.getAttribuutit()[4].getNimi(), a[4].getNimi());
+    }
+    
+    @Test
+    public void tyhjatAttribuutitKarsitaan() {
+        
+        Attribuutti[] a = new Attribuutti[]{
+                    new Attribuutti("id", "Pek123"),
+                    new Attribuutti("author", "Pekka Joki"),
+                    new Attribuutti("title", "joku raamattu"),
+                    new Attribuutti("year", "1920"),
+                    new Attribuutti("publisher", " ")};
+                
+        Kirja k = new Kirja(a);
+        
+        assertEquals(4, k.getAttribuutit().length);
     }
 
     @Test

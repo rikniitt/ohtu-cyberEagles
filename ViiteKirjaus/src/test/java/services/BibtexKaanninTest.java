@@ -73,7 +73,6 @@ public class BibtexKaanninTest {
     public void toimiiVaikkaIdEiAnnetaEnsimmaisena() {
         
         a = new Attribuutti[]{
-                    new Attribuutti("id", "Pek123"),
                     new Attribuutti("author", "Pekka Joki"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1920"),
