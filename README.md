@@ -15,5 +15,6 @@ joona 0445031184
 <ul>
   <li><a href="https://docs.google.com/spreadsheet/ccc?key=0AsX55CvBvmYkdHlrSEhyOXIxaUZteV9CRWxPaFozeEE&usp=sharing">Product backlog</a></li>
   <li><a href="https://github.com/mluukkai/ohtu2013/wiki/miniprojekti-speksi">Speksi</a></li>
+  <li><a href="http://t-markusno.users.cs.helsinki.fi/jenkins/updateCenter/">Jenkins</a></li>
 </ul>
   
