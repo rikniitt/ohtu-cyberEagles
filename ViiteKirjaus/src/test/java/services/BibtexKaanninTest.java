@@ -4,10 +4,10 @@
  */
 package services;
 
-import ViiteKirjaus.domain.Kirja;
+import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Attribuutti;
-import ViiteKirjaus.domain.Kirja;
+import ViiteKirjaus.domain.Viite;
 import services.BibtexKaannin;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -34,7 +34,7 @@ public class BibtexKaanninTest {
     }
     
     Attribuutti[] a;
-    Kirja k;
+    Viite k;
     BibtexKaannin bk;
     
     @Before
@@ -47,7 +47,7 @@ public class BibtexKaanninTest {
                     new Attribuutti("year", "1920"),
                     new Attribuutti("publisher", "WSOY")};
                 
-        k = new Kirja(a);
+        k = new Viite("book", a);
         
         bk = new BibtexKaannin();
     }
@@ -89,7 +89,7 @@ public class BibtexKaanninTest {
                     new Attribuutti("publisher", "WSOY"),
                     new Attribuutti("id", "Pek123")};
                 
-        k = new Kirja(a);
+        k = new Viite("book", a);
         
         assertEquals(
                 "@book{Pek123,\n" +

@@ -10,11 +10,14 @@ import java.util.ArrayList;
  *
  * @author olzraiti
  */
-public class Kirja {
+public class Viite {
     
+    private String tyyppi;
     private Attribuutti[] attribuutit;
     
-    public Kirja(Attribuutti[] attribuutit){
+    public Viite(String tyyppi, Attribuutti[] attribuutit){
+        
+        this.tyyppi = tyyppi;
         
         ArrayList<Attribuutti> karsinta = new ArrayList<Attribuutti>();
         
@@ -25,6 +28,10 @@ public class Kirja {
             }
         }
         this.attribuutit =  karsinta.toArray(new Attribuutti[karsinta.size()]);
+    }
+    
+    public String getTyyppi(){
+        return tyyppi;
     }
     
     public Attribuutti[] getAttribuutit(){

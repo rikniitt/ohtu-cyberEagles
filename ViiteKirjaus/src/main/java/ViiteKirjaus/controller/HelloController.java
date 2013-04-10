@@ -4,7 +4,7 @@ package ViiteKirjaus.controller;
 
 import ViiteKirjaus.domain.Attribuutti;
 import services.BibtexKaannin;
-import ViiteKirjaus.domain.Kirja;
+import ViiteKirjaus.domain.Viite;
 import java.io.IOException;
 import java.util.Arrays;
 import javax.servlet.http.HttpServletRequest;
@@ -41,7 +41,7 @@ public class HelloController {
         String vuosi = request.getParameter("vuosi");
         String julkaisija = request.getParameter("julkaisija");
         
-        Kirja kirja = new Kirja(
+        Viite kirja = new Viite("book",
                 new Attribuutti[]{
                     new Attribuutti("id", ID),
                     new Attribuutti("author", kirjailija),

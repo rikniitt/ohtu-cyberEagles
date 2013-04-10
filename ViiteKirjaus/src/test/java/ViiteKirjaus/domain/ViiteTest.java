@@ -4,7 +4,7 @@
  */
 package ViiteKirjaus.domain;
 
-import ViiteKirjaus.domain.Kirja;
+import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.domain.Attribuutti;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,9 +17,9 @@ import static org.junit.Assert.*;
  *
  * @author olzraiti
  */
-public class KirjaTest {
+public class ViiteTest {
    
-    public KirjaTest() {
+    public ViiteTest() {
     }
     
     @BeforeClass
@@ -29,6 +29,7 @@ public class KirjaTest {
     @AfterClass
     public static void tearDownClass() {
     }
+    
     
     @Before
     public void setUp() {
@@ -49,7 +50,7 @@ public class KirjaTest {
                     new Attribuutti("year", "1920"),
                     new Attribuutti("publisher", "WSOY")};
                 
-        Kirja k = new Kirja(a);
+        Viite k = new Viite("book", a);
         
         assertEquals(k.getAttribuutit()[0].getNimi(), a[0].getNimi());
         assertEquals(k.getAttribuutit()[1].getNimi(), a[1].getNimi());
@@ -68,14 +69,28 @@ public class KirjaTest {
                     new Attribuutti("year", "1920"),
                     new Attribuutti("publisher", " ")};
                 
-        Kirja k = new Kirja(a);
+        Viite k = new Viite("book", a);
         
         assertEquals(4, k.getAttribuutit().length);
     }
 
     @Test
+    public void getTyyppi() {
+        
+        Viite k =new Viite("book",
+            new Attribuutti[]{
+                new Attribuutti("id", "Pek123"),
+                new Attribuutti("author", "Pekka Joki"),
+                new Attribuutti("title", "joku raamattu"),
+                new Attribuutti("year", "1920"),
+                new Attribuutti("publisher", "WSOY")
+            });
+        
+        assertEquals("book", k.getTyyppi());
+    }
+    @Test
     public void getAttribuutit() {
-        Kirja k =new Kirja(
+        Viite k =new Viite("book",
                 new Attribuutti[]{
                     new Attribuutti("id", "Pek123"),
                     new Attribuutti("author", "Pekka Joki"),

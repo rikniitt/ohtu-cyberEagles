@@ -1,7 +1,7 @@
 package services;
 
 import ViiteKirjaus.domain.Attribuutti;
-import ViiteKirjaus.domain.Kirja;
+import ViiteKirjaus.domain.Viite;
 
 /**
  *
@@ -14,7 +14,7 @@ public class BibtexKaannin {
      */
     public static void main(String[] args) {
 
-        Kirja k = new Kirja(
+        Viite k = new Viite("book",
                 new Attribuutti[]{
                     new Attribuutti("id", "Pek123"),
                     new Attribuutti("author", "Pekka Joki"),
@@ -30,8 +30,8 @@ public class BibtexKaannin {
         System.out.println(kkk);
     }
 
-    public String kaanna(Kirja k) {
-        String kaannos = "@book{";
+    public String kaanna(Viite k) {
+        String kaannos = "@" + k.getTyyppi() + "{";
 
         //IDn täytyy olla ensimmäisenä
         for (int i = 0; i < k.getAttribuutit().length; i++) {
