@@ -1,4 +1,7 @@
-package ViiteKirjaus.domain.bibtexkaannin;
+package services;
+
+import ViiteKirjaus.domain.Attribuutti;
+import ViiteKirjaus.domain.Kirja;
 
 /**
  *
@@ -35,16 +38,16 @@ public class BibtexKaannin {
         String kaannos = "@book{";
 
         //IDn täytyy olla ensimmäisenä
-        for (int i = 0; i < k.attribuutit.length; i++) {
-            if (k.attribuutit[i].getNimi().equals("id")) {
-                kaannos = kaannos + k.attribuutit[i] + ",\n";
+        for (int i = 0; i < k.getAttribuutit().length; i++) {
+            if (k.getAttribuutit()[i].getNimi().equals("id")) {
+                kaannos = kaannos + k.getAttribuutit()[i] + ",\n";
                 break;
             }
         }
         //muiden attribuuttien järjestyksellä ei väliä
-        for (int i = 0; i < k.attribuutit.length; i++) {
-                if (!k.attribuutit[i].getNimi().equals("id"))
-                    kaannos = kaannos + k.attribuutit[i].getNimi() + " = " + k.attribuutit[i] + ",\n";
+        for (int i = 0; i < k.getAttribuutit().length; i++) {
+                if (!k.getAttribuutit()[i].getNimi().equals("id"))
+                    kaannos = kaannos + k.getAttribuutit()[i].getNimi() + " = " + k.getAttribuutit()[i] + ",\n";
         }
         
         kaannos = kaannos + "}";
