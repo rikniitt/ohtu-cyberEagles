@@ -58,17 +58,15 @@ public class BibtexKaanninTest {
 
     @Test
     public void testKaanna() {
-        boolean toimii = true;
         
-        if (!bk.kaanna(k).equals("@book{Pek123,\n" +
-                                "author = Pekka Joki,\n" +
-                                "title = joku raamattu,\n" +
-                                "year = 1920,\n" +
-                                "publisher = WSOY,\n" +
-                                "}"))
-                toimii = false;
-        
-        assertEquals(true, toimii);
+        assertEquals(
+                "@book{Pek123,\n" +
+                "author = Pekka Joki,\n" +
+                "title = joku raamattu,\n" +
+                "year = 1920,\n" +
+                "publisher = WSOY,\n" +
+                "}"
+                , bk.kaanna(k));
     }
     
     @Test
@@ -84,17 +82,13 @@ public class BibtexKaanninTest {
                 
         k = new Kirja(a);
         
-        
-        boolean toimii = true;
-        
-        if (!bk.kaanna(k).equals("@book{Pek123,\n" +
-                                "author = Pekka Joki,\n" +
-                                "title = joku raamattu,\n" +
-                                "year = 1920,\n" +
-                                "publisher = WSOY,\n" +
-                                "}"))
-                toimii = false;
-        
-        assertEquals(true, toimii);
+        assertEquals(
+                "@book{Pek123,\n" +
+                "author = Pekka Joki,\n" +
+                "title = joku raamattu,\n" +
+                "year = 1920,\n" +
+                "publisher = WSOY,\n" +
+                "}",
+                bk.kaanna(k));
     }
 }

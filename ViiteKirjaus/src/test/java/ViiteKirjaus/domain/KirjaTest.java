@@ -51,21 +51,11 @@ public class KirjaTest {
                 
         Kirja k = new Kirja(a);
         
-        boolean toimii = true;
-        
-        if (!a[0].getNimi().equals(a[0].getNimi()))
-            toimii = false;
-        if (!a[1].getNimi().equals(a[1].getNimi()))
-            toimii = false;
-        if (!a[2].getNimi().equals(a[2].getNimi()))
-            toimii = false;
-        if (!a[3].getNimi().equals(a[3].getNimi()))
-            toimii = false;
-        if (!a[4].getNimi().equals(a[4].getNimi()))
-            toimii = false;
-            
-            
-        assertEquals(true, toimii);
+        assertEquals(a[0].getNimi(), a[0].getNimi());
+        assertEquals(a[1].getNimi(), a[1].getNimi());
+        assertEquals(a[2].getNimi(), a[2].getNimi());
+        assertEquals(a[3].getNimi(), a[3].getNimi());
+        assertEquals(a[4].getNimi(), a[4].getNimi());
     }
 
     @Test
@@ -79,21 +69,11 @@ public class KirjaTest {
                     new Attribuutti("publisher", "WSOY")
                 });
         Attribuutti[] a = k.getAttribuutit();
-        
-        boolean attribuutitOikein = true;
-        
-        if (!a[0].getNimi().equals("id"))
-            attribuutitOikein = false;
-        if (!a[1].getNimi().equals("author"))
-            attribuutitOikein = false;
-        if (!a[2].getNimi().equals("title"))
-            attribuutitOikein = false;
-        if (!a[3].getNimi().equals("year"))
-            attribuutitOikein = false;
-        if (!a[4].getNimi().equals("publisher"))
-            attribuutitOikein = false;
             
-            
-        assertEquals(true, attribuutitOikein);
+        assertEquals("id", a[0].getNimi());
+        assertEquals("author", a[1].getNimi());
+        assertEquals("title", a[2].getNimi());
+        assertEquals("year", a[3].getNimi());
+        assertEquals("publisher", a[4].getNimi());
     }
 }

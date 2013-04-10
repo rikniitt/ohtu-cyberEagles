@@ -42,45 +42,26 @@ public class AttribuuttiTest {
     
     public void konstruktoriToimii() {
         
-        Attribuutti att = new Attribuutti("year", "2013");
+        a = new Attribuutti("year", "2013");
         
-        boolean toimii = true;
-        
-        if (!att.getNimi().equals("year"))
-            toimii = false;
-        if (!att.getArvo().equals("2013"))
-            toimii = false;
-        
-        assertEquals(true, toimii);
+        assertEquals("year", a.getNimi());
+        assertEquals("2013", a.getArvo());
     }
 
     public void getNimiToimii() {
         
-        boolean toimii = true;
-        
-        if (!a.getNimi().equals("year"))
-            toimii = false;
-        
-        assertEquals(true, toimii);
+        assertEquals("year", a.getNimi());
     }
     
     public void getArvoToimii() {
         
-        boolean toimii = true;
+        assertEquals("2013", a.getArvo());
         
-        if (!a.getArvo().equals("2013"))
-            toimii = false;
-        
-        assertEquals(true, toimii);
     }
     
     public void toStringToimii() {
         
-        boolean toimii = true;
+        assertEquals("2013", a.toString());
         
-        if (!a.toString().equals("2013"))
-            toimii = false;
-        
-        assertEquals(true, toimii);
     }
 }
