@@ -30,6 +30,9 @@ public class Kirja {
         this.attribuutit = attribuutit;
     }
     
+    
+    
+    
     public Attribuutti[] getAttribuutit(){
         return attribuutit;
     }
