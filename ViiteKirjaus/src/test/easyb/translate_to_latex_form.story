@@ -5,29 +5,16 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 description 'Tutkijana haluan kääntää viitteen tiedot latexin ymmärtämään muotoon'
  
 scenario "", {
-    given '', {
-        
-    }
+    given ''
+    when ''
 
-    when '', {
-        
-    }
-
-    then '', {
-        
-    }
+    then ''
 }
 
 scenario "", {
-    given '', {
-         
-    }
+    given ''
 
-    when '', {
-        
-    }
+    when ''
 
-    then '', {
-        
-    }
+    then ''
 }
