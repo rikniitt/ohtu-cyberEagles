@@ -20,6 +20,22 @@ scenario "Tutkija voi siirtyä linkin avulla kirjan lisäämiseen", {
     }
 }
 
+scenario "Tutkija voi siirtyä linkin avulla artikkelin lisäämiseen", {
+    given 'tutkija on etusivulla', {
+        driver = new HtmlUnitDriver()
+        driver.get("http://localhost:8080")
+    }
+
+    when 'tutkija painaa kirjanlisäyslinkkiä', {
+        element = driver.findElement(By.linkText("Lisää artikkeliviite"));
+        element.click();
+    }
+
+    then 'tutkija on kirjanlisäyssivulla', {
+        driver.getPageSource().contains("Lisää artikkeliviite").shouldBe true
+    }
+}
+
 scenario "Tutkija voi siirtyä linkin avulla viitteiden listaamiseen", {
     given 'tutkija on etusivulla', {
         driver = new HtmlUnitDriver()

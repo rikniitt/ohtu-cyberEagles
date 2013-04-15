@@ -7,7 +7,7 @@
         <title>Kirjaviitekirjaus</title>
     </head>
     <body>
-	<h1>Lisää viite</h1>
+	<h1>Lisää kirjaviite</h1>
 	<form method="POST" action="">
 	  <label>ID: <input type="text" name="ID" /></label><p>
 	  <label>Kirjailija: <input type="text" name="kirjailija" /></label><p>
