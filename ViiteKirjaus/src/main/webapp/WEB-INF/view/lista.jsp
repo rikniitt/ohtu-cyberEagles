@@ -20,9 +20,9 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="viite" items="${viiteet}">
+                <c:forEach var="viite" items="${viitteet}">
                     <tr>
-                        <td>viite</td>
+                        <td>${viite.tyyppi}</td>
                     </tr>
                    
                  </c:forEach>

@@ -64,18 +64,25 @@ public class HelloControllerTest {
        Assert.assertEquals("etusivu", view);
    }
    
-   @Test
-   public void testHelloControllerListaPalauttaaOikeanViewin() {
-       HelloController c= new HelloController();
-       String view = c.lista();
-       Assert.assertEquals("lista", view);
-   }
+//   @Test
+//   public void testHelloControllerListaPalauttaaOikeanViewin() {
+//       HelloController c= new HelloController();
+//       String view = c.lista();
+//       Assert.assertEquals("lista", view);
+//   }
    
    @Test
    public void testHelloControllerKirjaLisaaPalauttaaOikeanViewin() {
        HelloController c= new HelloController();
        String view = c.kirjaLisaa();
        Assert.assertEquals("kirja", view);
+   }
+   
+   @Test
+   public void testHelloControllerArtikkeliLisaaPalauttaaOikeanViewin() {
+       HelloController c= new HelloController();
+       String view = c.artikkeliLisaa();
+       Assert.assertEquals("artikkeli", view);
    }
    
    

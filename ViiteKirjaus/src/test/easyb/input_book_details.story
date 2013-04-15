@@ -2,10 +2,10 @@
 import org.openqa.selenium.*
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
-description 'Tutkijana haluan syöttää ohjelmaan kirja viitteen tiedot.'
+description 'Tutkijana haluan syöttää ohjelmaan kirjaviitteen tiedot.'
  
-scenario "Tutkija voi syöttää kirja viitteen tiedot (ID, Kirjailija, Titteli, Vuosi ja Julkaisija", {
-    given 'kirja viitteen syöttö valittuna', {
+scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, Vuosi ja Julkaisija", {
+    given 'kirjaviitteen syöttö valittuna', {
         driver = new HtmlUnitDriver()
         driver.get("http://localhost:8080/kirja/lisaa")
     }

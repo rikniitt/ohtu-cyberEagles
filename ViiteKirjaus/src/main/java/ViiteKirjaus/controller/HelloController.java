@@ -6,6 +6,7 @@ import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.services.BibtexKaannin;
 import ViiteKirjaus.services.data_access.ViiteDao;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-//
-//    @Autowired ViiteDao dao;
+
+    @Autowired ViiteDao dao;
 
     @RequestMapping("*")
     public String index() {
@@ -25,20 +26,26 @@ public class HelloController {
     }
     
     
+    @RequestMapping("lista")
+    public ModelAndView lista() {
+        
+        ModelAndView result = new ModelAndView("lista");
+        ArrayList<Integer> viitteet = new ArrayList<Integer>();
+        for (int i = 0; i < 10; i++) {
+            viitteet.add(i);
+        }
+        result.addObject("viitteet",dao.listAll());
+        return result;
+        
+    }
+    
 //    @RequestMapping("lista")
-//    public ModelAndView lista() {
-//        
-//        ModelAndView result = new ModelAndView("lista");
-//        result.addObject("viitteet", dao.listAll());
-//        return result;
+//    public String lista() {
+//        return "lista";
 //        
 //    }
     
-    @RequestMapping("lista")
-    public String lista() {
-        return "lista";
-        
-    }
+    
     
     @RequestMapping("kirja/lisaa")
     public String kirjaLisaa() {
@@ -63,15 +70,59 @@ public class HelloController {
                 });
 
         
-        //dao.add(kirja);
+        dao.add(kirja);
         
         
         BibtexKaannin kaannin = new BibtexKaannin();
         String parsittu = kaannin.kaanna(kirja);
-        System.out.println(parsittu);
+        //System.out.println(parsittu);
    
         
         ModelAndView result = new ModelAndView("kirja");
+        result.addObject("parsed", parsittu);
+        return result;
+        
+    }
+    
+    
+    
+    
+    
+    
+    @RequestMapping("artikkeli/lisaa")
+    public String artikkeliLisaa() {
+        return "artikkeli";
+    }
+    
+    @RequestMapping(value = "artikkeli/lisaa", method = RequestMethod.POST)
+    public ModelAndView artikkeliLisaaKasittele(HttpServletRequest request, HttpServletResponse response) {
+        String ID = request.getParameter("ID");
+        String author = request.getParameter("author");
+        String title = request.getParameter("title");
+        String journal = request.getParameter("journal");
+        String year = request.getParameter("year");
+        String publisher = request.getParameter("publisher");
+        
+        Viite artikkeli = new Viite("article",
+                new Attribuutti[]{
+                    new Attribuutti("id", ID),
+                    new Attribuutti("author", author),
+                    new Attribuutti("title", title),
+                    new Attribuutti("journal", journal),
+                    new Attribuutti("year", year),
+                    new Attribuutti("publisher", publisher)
+                });
+
+        
+        dao.add(artikkeli);
+        
+        
+        BibtexKaannin kaannin = new BibtexKaannin();
+        String parsittu = kaannin.kaanna(artikkeli);
+        //System.out.println(parsittu);
+   
+        
+        ModelAndView result = new ModelAndView("artikkeli");
         result.addObject("parsed", parsittu);
         return result;
         

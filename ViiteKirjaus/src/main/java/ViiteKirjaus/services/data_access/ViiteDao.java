@@ -9,4 +9,6 @@ public interface ViiteDao {
     List<Viite> listAll();
 
     void add(Viite viite);
+    
+
 }
