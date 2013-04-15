@@ -20,6 +20,11 @@
             </c:forEach>
         </p>
         
+        <h2>Bibtex</h2>
+        <p>
+            <textarea cols="32" rows="12">${parsed}</textarea>
+        </p>
+        
         <p><a href="/home">Takaisin</a></p>
     </body>
 </html>

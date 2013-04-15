@@ -50,6 +50,9 @@ public class HelloController {
         Viite v = (dao.findById(id) == null) ? new Viite("empty", new Attribuutti[]{}) : dao.findById(id);
         ModelAndView result = new ModelAndView("viite");
         result.addObject("viite", v);
+        BibtexKaannin kaannin = new BibtexKaannin();
+        String parsittu = kaannin.kaanna(v);
+        result.addObject("parsed", parsittu);
         return result;
     }
     
