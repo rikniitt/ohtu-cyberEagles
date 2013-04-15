@@ -56,6 +56,7 @@ public class HelloController {
         String titteli = request.getParameter("titteli");
         String vuosi = request.getParameter("vuosi");
         String julkaisija = request.getParameter("julkaisija");
+        String osoite = request.getParameter("osoite");
         
         Viite kirja = new Viite("book",
                 new Attribuutti[]{
@@ -63,7 +64,8 @@ public class HelloController {
                     new Attribuutti("author", kirjailija),
                     new Attribuutti("title", titteli),
                     new Attribuutti("year", vuosi),
-                    new Attribuutti("publisher", julkaisija)
+                    new Attribuutti("publisher", julkaisija),
+                    new Attribuutti("address", osoite)
                 });
 
         
@@ -99,6 +101,10 @@ public class HelloController {
         String journal = request.getParameter("journal");
         String year = request.getParameter("year");
         String publisher = request.getParameter("publisher");
+        String volume = request.getParameter("volume");
+        String number = request.getParameter("number");
+        String pages = request.getParameter("pages");
+        String address = request.getParameter("address");
         
         Viite artikkeli = new Viite("article",
                 new Attribuutti[]{
@@ -107,10 +113,13 @@ public class HelloController {
                     new Attribuutti("title", title),
                     new Attribuutti("journal", journal),
                     new Attribuutti("year", year),
-                    new Attribuutti("publisher", publisher)
+                    new Attribuutti("publisher", publisher),
+                    new Attribuutti("volume", volume),
+                    new Attribuutti("number", number),
+                    new Attribuutti("pages", pages),
+                    new Attribuutti("address", address)
                 });
 
-        
         dao.add(artikkeli);
         
         
@@ -138,6 +147,8 @@ public class HelloController {
         String title = request.getParameter("title");
         String journal = request.getParameter("booktitle");
         String year = request.getParameter("year");
+        String pages = request.getParameter("pages");
+        String address = request.getParameter("address");
         
         Viite konferenssi = new Viite("inproceeding",
                 new Attribuutti[]{
@@ -146,9 +157,10 @@ public class HelloController {
                     new Attribuutti("title", title),
                     new Attribuutti("booktitle", journal),
                     new Attribuutti("year", year),
+                    new Attribuutti("pages", pages),
+                    new Attribuutti("address", address)
                 });
 
-        
         dao.add(konferenssi);
         
         
