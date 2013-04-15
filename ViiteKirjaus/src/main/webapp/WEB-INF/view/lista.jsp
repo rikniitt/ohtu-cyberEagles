@@ -13,18 +13,23 @@
         <table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Kirjoittaja</td>    
-                    <td>Nimi</td>    
-                    <td>Vuosi</td>    
-                    <td>Julkaisija</td>    
+                    <td>Tyyppi</td>
+                    <td>Sisältö</td>    
+                    <td>ID</td>    
                 </tr>
             </thead>
             <tbody>
                 <c:forEach var="viite" items="${viitteet}">
+                    
+                    
                     <tr>
                         <td>${viite.tyyppi}</td>
-
+                        <td>
+                            <c:forEach var="attr" items="${viite.attribuutit}">
+                                ${attr.nimi} = ${attr.arvo}<br />
+                            </c:forEach>
+                        </td>
+                        <td>${viite.id}</td>
                     </tr>
                    
                  </c:forEach>

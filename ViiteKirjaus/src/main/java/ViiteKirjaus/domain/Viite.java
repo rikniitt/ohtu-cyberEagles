@@ -45,6 +45,8 @@ public class Viite {
         return "";
     }
     
+    public int getId() { return 666; }
     
-    public String foo() { return "bar"; }
+    
+    
 }

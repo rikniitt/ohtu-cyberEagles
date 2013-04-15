@@ -126,6 +126,42 @@ public class HelloController {
     }
     
     
+    @RequestMapping("konferenssi/lisaa")
+    public String konferenssiLisaa() {
+        return "konferenssi";
+    }
+    
+    @RequestMapping(value = "konferenssi/lisaa", method = RequestMethod.POST)
+    public ModelAndView konferenssiLisaaKasittele(HttpServletRequest request, HttpServletResponse response) {
+        String ID = request.getParameter("ID");
+        String author = request.getParameter("author");
+        String title = request.getParameter("title");
+        String journal = request.getParameter("booktitle");
+        String year = request.getParameter("year");
+        
+        Viite konferenssi = new Viite("inproceeding",
+                new Attribuutti[]{
+                    new Attribuutti("id", ID),
+                    new Attribuutti("author", author),
+                    new Attribuutti("title", title),
+                    new Attribuutti("booktitle", journal),
+                    new Attribuutti("year", year),
+                });
+
+        
+        dao.add(konferenssi);
+        
+        
+        BibtexKaannin kaannin = new BibtexKaannin();
+        String parsittu = kaannin.kaanna(konferenssi);
+        //System.out.println(parsittu);
+   
+        
+        ModelAndView result = new ModelAndView("konferenssi");
+        result.addObject("parsed", parsittu);
+        return result;
+        
+    }
     
     
 }
