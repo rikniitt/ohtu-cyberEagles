@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,7 +34,6 @@ public class HelloController {
 
         result.addObject("viitteet",dao.listAll());
         return result;
-        
     }
     
 //    @RequestMapping("lista")
@@ -43,6 +43,15 @@ public class HelloController {
 //    }
     
     
+        
+    
+    @RequestMapping("viite/{id}")
+    public ModelAndView viiteNayta(@PathVariable("id") int id) {
+        Viite v = (dao.findById(id) == null) ? new Viite("empty", new Attribuutti[]{}) : dao.findById(id);
+        ModelAndView result = new ModelAndView("viite");
+        result.addObject("viite", v);
+        return result;
+    }
     
     @RequestMapping("kirja/lisaa")
     public String kirjaLisaa() {
