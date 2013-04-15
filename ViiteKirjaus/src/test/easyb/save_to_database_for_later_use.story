@@ -5,29 +5,17 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 description 'Tutkijana haluan tallentaa syöttämäni viitteen myohempää käyttöä varten.'
  
 scenario "", {
-    given '', {
-        
-    }
+    given ''
 
-    when '', {
-        
-    }
+    when ''
 
-    then '', {
-        
-    }
+    then ''
 }
 
 scenario "", {
-    given '', {
-         
-    }
+    given ''
 
-    when '', {
-        
-    }
+    when ''
 
-    then '', {
-        
-    }
+    then ''
 }

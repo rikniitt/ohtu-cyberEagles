@@ -9,6 +9,14 @@
     <body>
         <h1 id="welcome-text">Arton viite kirjaus</h1>
 
+        <a href="kirja/lisaa">Lisää kirjaviite</a>
+        <br />
+        <a href="artikkeli/lisaa">Lisää artikkeliviite</a>
+        <br />
+        <a href="konferenssi/lisaa">Lisää konferenssiviite</a>
+        <br />
+        <a href="lista">Listaa viitteet</a>
+
 
     </body>
 </html>

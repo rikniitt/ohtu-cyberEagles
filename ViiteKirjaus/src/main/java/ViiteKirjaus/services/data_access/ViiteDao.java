@@ -9,4 +9,7 @@ public interface ViiteDao {
     List<Viite> listAll();
 
     void add(Viite viite);
+ 
+    Viite findById(int id);
+
 }

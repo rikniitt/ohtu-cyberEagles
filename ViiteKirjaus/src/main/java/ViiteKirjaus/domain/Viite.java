@@ -40,6 +40,7 @@ public class Viite {
         return attribuutit;
     }
 
+
     private void generoiId() {
         String author = "AAAA";
         String year = "0000";
@@ -81,4 +82,18 @@ public class Viite {
         }
         
     }
+
+    
+    public String getAttribuutti(String nimi){
+        for (Attribuutti a : attribuutit)
+            if (a.getNimi().equals(nimi))
+                return a.getArvo();
+        return "";
+    }
+    
+    public int getId() { return 666; }
+    
+    
+    
+
 }

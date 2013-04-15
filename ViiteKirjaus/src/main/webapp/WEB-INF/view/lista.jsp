@@ -1,4 +1,5 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,17 +13,23 @@
         <table>
             <thead>
                 <tr>
-                    <td>ID</td>
-                    <td>Kirjoittaja</td>    
-                    <td>Nimi</td>    
-                    <td>Vuosi</td>    
-                    <td>Julkaisija</td>    
+                    <td>Tyyppi</td>
+                    <td>Sisältö</td>    
+                    <td>ID</td>    
                 </tr>
             </thead>
             <tbody>
-                <c:forEach var="viite" items="${viiteet}">
+                <c:forEach var="viite" items="${viitteet}">
+                    
+                    
                     <tr>
-                        <td>viite</td>
+                        <td>${viite.tyyppi}</td>
+                        <td>
+                            <c:forEach var="attr" items="${viite.attribuutit}">
+                                ${attr.nimi} = ${attr.arvo}<br />
+                            </c:forEach>
+                        </td>
+                        <td><a href="viite/${viite.id}" >Näytä</a></td>
                     </tr>
                    
                  </c:forEach>
@@ -30,6 +37,7 @@
                 
         </table>
 
-        </ul
+        
+        <p><a href="/home">Takaisin</a></p>
     </body>
 </html>
