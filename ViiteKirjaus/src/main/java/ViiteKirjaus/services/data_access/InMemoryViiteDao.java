@@ -40,6 +40,14 @@ public class InMemoryViiteDao implements ViiteDao{
         this.viitteet = viitteet;
     }
 
+    @Override
+    public Viite findById(int id) {
+        for (Viite v : viitteet)
+            if (v.getId() == id)
+                return v;
+        return null;
+    }
+
     
     
     

@@ -61,7 +61,7 @@ public class BibtexKaanninTest {
     public void kaannaToimii() {
         
         assertEquals(
-                "@book{Pek123,\n" +
+                "@book{P20,\n" +
                 "author = {Pekka Joki},\n" +
                 "title = {joku raamattu},\n" +
                 "year = {1920},\n" +
@@ -95,7 +95,7 @@ public class BibtexKaanninTest {
         k = new Viite("book", a);
         
         assertEquals(
-                "@book{Pek123,\n" +
+                "@book{P20,\n" +
                 "author = {Pekka Joki},\n" +
                 "title = {joku raamattu},\n" +
                 "year = {1920},\n" +

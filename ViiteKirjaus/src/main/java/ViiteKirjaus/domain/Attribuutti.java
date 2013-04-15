@@ -30,4 +30,9 @@ public class Attribuutti {
     public String getArvo(){
         return arvo;
     }
+
+    public void setArvo(String arvo) {
+        this.arvo = arvo;
+    }
+    
 }

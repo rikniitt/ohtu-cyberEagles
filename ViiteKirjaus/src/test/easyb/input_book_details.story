@@ -4,7 +4,7 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 description 'Tutkijana haluan syöttää ohjelmaan kirjaviitteen tiedot.'
  
-scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, Vuosi ja Julkaisija", {
+scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, Vuosi, Julkaisija, Osoite)", {
     given 'kirjaviitteen syöttö valittuna', {
         driver = new HtmlUnitDriver()
         driver.get("http://localhost:8080/kirja/lisaa")
@@ -26,6 +26,9 @@ scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, 
 
         element = driver.findElement(By.name("julkaisija"))
         element.sendKeys("Otava")
+
+        element = driver.findElement(By.name("osoite"))
+        element.sendKeys("1997")
         
         element.submit()
     }
@@ -37,5 +40,6 @@ scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, 
         parsedOuput.contains("Aapon kootut Aatokset").shouldBe true
         parsedOuput.contains("1950").shouldBe true
         parsedOuput.contains("Otava").shouldBe true
+        parsedOuput.contains("1997").shouldBe true
     }
 }

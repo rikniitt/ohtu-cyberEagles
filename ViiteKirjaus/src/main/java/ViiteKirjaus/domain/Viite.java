@@ -28,7 +28,7 @@ public class Viite {
     }
     
     public Viite(String tyyppi, Attribuutti[] attribuutit){
-        
+           
         this.tyyppi = tyyppi;
         
         ArrayList<Attribuutti> karsinta = new ArrayList<Attribuutti>();
@@ -40,15 +40,61 @@ public class Viite {
             }
         }
         this.attribuutit = karsinta;
+
+        
+        generoiId();
+
     }
     
     public String getTyyppi(){
         return tyyppi;
     }
     
-//    public Attribuutti[] getAttribuutit(){
-//        return (Attribuutti[])attribuutit.toArray();
-//    }
+
+
+    private void generoiId() {
+        String author = "AAAA";
+        String year = "0000";
+        for (Attribuutti attribuutti : attribuutit) {
+            if (attribuutti.getNimi().equals("author")){
+                author = attribuutti.getArvo();
+            }
+        }
+        for (Attribuutti attribuutti : attribuutit) {
+            if (attribuutti.getNimi().equals("year")){
+                year = attribuutti.getArvo();
+            }
+        }
+        String id = author.substring(0, 1);
+        boolean kirjainLisatty = true;
+        
+        for (int i = 0; i < author.length(); i++)   {
+            if (i < author.length()-5 && author.substring(i, i+5).equals(" and ")){
+                kirjainLisatty = false;
+                i += 4;
+                continue;
+            }
+            if (author.substring(i, i+1).equals(" ")){
+                continue;
+            }
+            if (!kirjainLisatty)    {
+                id += author.substring(i, i+1);
+                kirjainLisatty = true;
+            }
+        }
+        
+        id += year.substring(2, 4);
+
+        for (Attribuutti attribuutti : attribuutit) {
+            if (attribuutti.getNimi().equals("id")){
+                attribuutti.setArvo(id);
+                return;
+            }
+        }
+        
+    }
+
+
     
     public String getAttribuutti(String nimi){
         for (Attribuutti a : attribuutit) {
@@ -82,4 +128,5 @@ public class Viite {
     
     
     
+
 }
