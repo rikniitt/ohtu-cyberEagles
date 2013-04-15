@@ -22,14 +22,27 @@ public class DB_configMemoryTest {
     }
     
     DB_config db_config;
+    EbeanServer server;
 
     @Before
     public void setUp() {
-            db_config = new DB_configMemory(true);       
+            db_config = new DB_configMemory(true, "test");
+            server = db_config.getServer();
     }
 
     @Test
     public void testKonstruktoriPalauttaaOlion() {
         assertFalse(db_config == null);
+    }
+    
+    @Test
+    public void testGetServerPalauttaaOlion() {
+        assertFalse(db_config.getServer() == null);
+    }
+    
+    @Test
+    public void testUusiConfiguraatioOlioPalauttaaSamanServerin(){
+        DB_config newConfig = new DB_configMemory(true);
+        assertTrue(newConfig.getServer().equals(server));
     }
 }

@@ -37,4 +37,14 @@ public class Viite {
     public Attribuutti[] getAttribuutit(){
         return attribuutit;
     }
+    
+    public String getAttribuutti(String nimi){
+        for (Attribuutti a : attribuutit)
+            if (a.getNimi().equals(nimi))
+                return a.getArvo();
+        return "";
+    }
+    
+    
+    public String foo() { return "bar"; }
 }

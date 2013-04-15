@@ -30,10 +30,7 @@ public class HelloController {
     public ModelAndView lista() {
         
         ModelAndView result = new ModelAndView("lista");
-        ArrayList<Integer> viitteet = new ArrayList<Integer>();
-        for (int i = 0; i < 10; i++) {
-            viitteet.add(i);
-        }
+
         result.addObject("viitteet",dao.listAll());
         return result;
         
