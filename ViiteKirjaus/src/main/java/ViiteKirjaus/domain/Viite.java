@@ -5,15 +5,27 @@
 package ViiteKirjaus.domain;
 
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author olzraiti
  */
+@ Entity
 public class Viite {
     
+    @Id
+    private Integer id;
+    
     private String tyyppi;
-    private Attribuutti[] attribuutit;
+    
+    
+    private List<Attribuutti> attribuutit;    
+
+    public Viite() {
+    }
     
     public Viite(String tyyppi, Attribuutti[] attribuutit){
         
@@ -27,25 +39,46 @@ public class Viite {
                 karsinta.add(a);
             }
         }
-        this.attribuutit =  karsinta.toArray(new Attribuutti[karsinta.size()]);
+        this.attribuutit = karsinta;
     }
     
     public String getTyyppi(){
         return tyyppi;
     }
     
-    public Attribuutti[] getAttribuutit(){
-        return attribuutit;
-    }
+//    public Attribuutti[] getAttribuutit(){
+//        return (Attribuutti[])attribuutit.toArray();
+//    }
     
     public String getAttribuutti(String nimi){
-        for (Attribuutti a : attribuutit)
-            if (a.getNimi().equals(nimi))
+        for (Attribuutti a : attribuutit) {
+            if (a.getNimi().equals(nimi)) {
                 return a.getArvo();
+            }
+        }
         return "";
     }
     
-    public int getId() { return 666; }
+    public int getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public List<Attribuutti> getAttribuutit() {
+        return attribuutit;
+    }
+
+    public void setAttribuutit(List<Attribuutti> attribuutit) {
+        this.attribuutit = attribuutit;
+    }
+    
+    
+    
+    
+    
     
     
     

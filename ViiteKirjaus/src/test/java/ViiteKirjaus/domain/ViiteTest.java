@@ -6,6 +6,7 @@ package ViiteKirjaus.domain;
 
 import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.domain.Attribuutti;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,11 +53,11 @@ public class ViiteTest {
                 
         Viite k = new Viite("book", a);
         
-        assertEquals(k.getAttribuutit()[0].getNimi(), a[0].getNimi());
-        assertEquals(k.getAttribuutit()[1].getNimi(), a[1].getNimi());
-        assertEquals(k.getAttribuutit()[2].getNimi(), a[2].getNimi());
-        assertEquals(k.getAttribuutit()[3].getNimi(), a[3].getNimi());
-        assertEquals(k.getAttribuutit()[4].getNimi(), a[4].getNimi());
+        assertEquals(k.getAttribuutit().get(0).getNimi(), a[0].getNimi());
+        assertEquals(k.getAttribuutit().get(1).getNimi(), a[1].getNimi());
+        assertEquals(k.getAttribuutit().get(2).getNimi(), a[2].getNimi());
+        assertEquals(k.getAttribuutit().get(3).getNimi(), a[3].getNimi());
+        assertEquals(k.getAttribuutit().get(4).getNimi(), a[4].getNimi());
     }
     
     @Test
@@ -71,7 +72,7 @@ public class ViiteTest {
                 
         Viite k = new Viite("book", a);
         
-        assertEquals(4, k.getAttribuutit().length);
+        assertEquals(4, k.getAttribuutit().size());
     }
 
     @Test
@@ -98,13 +99,13 @@ public class ViiteTest {
                     new Attribuutti("year", "1920"),
                     new Attribuutti("publisher", "WSOY")
                 });
-        Attribuutti[] a = k.getAttribuutit();
+        List<Attribuutti> a = k.getAttribuutit();
             
-        assertEquals("id", a[0].getNimi());
-        assertEquals("author", a[1].getNimi());
-        assertEquals("title", a[2].getNimi());
-        assertEquals("year", a[3].getNimi());
-        assertEquals("publisher", a[4].getNimi());
+        assertEquals("id", a.get(0).getNimi());
+        assertEquals("author", a.get(1).getNimi());
+        assertEquals("title", a.get(2).getNimi());
+        assertEquals("year", a.get(3).getNimi());
+        assertEquals("publisher", a.get(4).getNimi());
     }
     
     
