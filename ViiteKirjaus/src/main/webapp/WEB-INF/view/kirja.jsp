@@ -14,6 +14,7 @@
 	  <label>Titteli: <input type="text" name="titteli" /></label><p>
  	  <label>Vuosi: <input type="text" name="vuosi" /></label><p>
 	  <label>julkaisija: <input type="text" name="julkaisija" /></label><p>
+	  <label>osoite: <input type="text" name="osoite" /></label><p>
 	  <input type="submit" />
 	</form>
         
