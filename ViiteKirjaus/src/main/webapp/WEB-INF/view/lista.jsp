@@ -29,7 +29,7 @@
                                 ${attr.nimi} = ${attr.arvo}<br />
                             </c:forEach>
                         </td>
-                        <td>${viite.id}</td>
+                        <td><a href="viite/${viite.id}" >Näytä</a></td>
                     </tr>
                    
                  </c:forEach>
@@ -37,6 +37,7 @@
                 
         </table>
 
-        </ul
+        
+        <p><a href="/home">Takaisin</a></p>
     </body>
 </html>
