@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package data_acces;
+package services.data_access;
 
+import ViiteKirjaus.services.data_access.DB_configSqlLite;
+import ViiteKirjaus.services.data_access.DB_config;
 import com.avaje.ebean.EbeanServer;
 import org.junit.After;
 import org.junit.AfterClass;

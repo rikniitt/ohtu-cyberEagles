@@ -1,6 +1,6 @@
 
 import com.avaje.ebean.EbeanServer;
-import data_acces.DB_configSqlLite;
+import ViiteKirjaus.services.data_access.DB_configSqlLite;
 
 /*
  * To change this template, choose Tools | Templates
