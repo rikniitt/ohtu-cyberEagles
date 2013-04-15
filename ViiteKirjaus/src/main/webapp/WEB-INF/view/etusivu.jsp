@@ -8,7 +8,9 @@
     </head>
     <body>
         <h1 id="welcome-text">Arton viite kirjaus</h1>
-
+        <a href="kirja/lisaa">Lisää kirjaviite</a>
+        <p>
+        <a href="lista">Listaa viitteet</a>
 
     </body>
 </html>
