@@ -106,4 +106,32 @@ public class ViiteTest {
         assertEquals("year", a[3].getNimi());
         assertEquals("publisher", a[4].getNimi());
     }
+    
+    @Test
+    public void idGeneroituuOikeinJosYksiAuthor()   {
+        Viite k =new Viite("book",
+                new Attribuutti[]{
+                    new Attribuutti("id", "0000"),
+                    new Attribuutti("author", "Joki, Pekka"),
+                    new Attribuutti("title", "joku raamattu"),
+                    new Attribuutti("year", "1999"),
+                    new Attribuutti("publisher", "WSOY")
+                });
+        Attribuutti[] a = k.getAttribuutit();
+        assertEquals("J99", a[0].getArvo());
+    }
+    
+    @Test
+    public void idGeneroituuOikeinJosKolmeAuthoria()   {
+        Viite k =new Viite("book",
+                new Attribuutti[]{
+                    new Attribuutti("id", "0000"),
+                    new Attribuutti("author", "Joki, Pekka and Kaksinen, Jukka and Kolminen, A."),
+                    new Attribuutti("title", "joku raamattu"),
+                    new Attribuutti("year", "1999"),
+                    new Attribuutti("publisher", "WSOY")
+                });
+        Attribuutti[] a = k.getAttribuutit();
+        assertEquals("JKK99", a[0].getArvo());
+    }
 }

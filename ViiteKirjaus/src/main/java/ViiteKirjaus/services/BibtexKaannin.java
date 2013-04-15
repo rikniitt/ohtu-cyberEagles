@@ -8,10 +8,7 @@ import ViiteKirjaus.domain.Viite;
  * @author olzraiti
  */
 public class BibtexKaannin {
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
 
         Viite k = new Viite("book",
