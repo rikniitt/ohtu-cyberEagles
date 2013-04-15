@@ -18,8 +18,13 @@ public class DB_configMemory implements DB_config {
     private static EbeanServer server;
 
     public DB_configMemory(boolean dropAndCreateDatabase) {
+        this(dropAndCreateDatabase, "viitekanta");
+        
+    }
+    
+    public DB_configMemory(boolean dropAndCreateDatabase, String dbName) {
         if (server == null) {
-            server = initializeDatabase(dropAndCreateDatabase);
+            server = initializeDatabase(dropAndCreateDatabase, dbName);
         }
     }
 
@@ -28,9 +33,9 @@ public class DB_configMemory implements DB_config {
         return server;
     }
 
-    private EbeanServer initializeDatabase(boolean dropAndCreateDatabase) {
+    private EbeanServer initializeDatabase(boolean dropAndCreateDatabase, String dbName) {
         ServerConfig config = new ServerConfig();
-        config.setName("ViiteDb");
+        config.setName(dbName);
         DataSourceConfig hdDB = new DataSourceConfig();
         hdDB.setDriver("org.h2.Driver");
         hdDB.setUsername("test");
