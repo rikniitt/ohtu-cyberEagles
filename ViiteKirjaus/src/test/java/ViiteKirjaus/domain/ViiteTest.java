@@ -106,4 +106,40 @@ public class ViiteTest {
         assertEquals("year", a[3].getNimi());
         assertEquals("publisher", a[4].getNimi());
     }
+    
+    
+    
+    @Test
+    public void getAttribuuttiYear() {
+        Viite k =new Viite("book",
+                new Attribuutti[]{
+                    new Attribuutti("id", "Pek123"),
+                    new Attribuutti("author", "Pekka Joki"),
+                    new Attribuutti("title", "joku raamattu"),
+                    new Attribuutti("year", "1920"),
+                    new Attribuutti("publisher", "WSOY")
+                });
+        
+
+        assertEquals("1920", k.getAttribuutti("year"));
+        
+    }
+    
+    @Test
+    public void getAttribuuttiOlematon() {
+        Viite k =new Viite("book",
+                new Attribuutti[]{
+                    new Attribuutti("id", "Pek123"),
+                    new Attribuutti("author", "Pekka Joki"),
+                    new Attribuutti("title", "joku raamattu"),
+                    new Attribuutti("year", "1920"),
+                    new Attribuutti("publisher", "WSOY")
+                });
+        
+
+        assertEquals("", k.getAttribuutti("asuidyasduiy"));
+        
+    }
+    
+    
 }
