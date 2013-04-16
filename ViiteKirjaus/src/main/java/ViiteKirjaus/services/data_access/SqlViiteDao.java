@@ -29,5 +29,10 @@ public class SqlViiteDao implements ViiteDao{
     public void add(Viite viite) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public Viite findById(int id) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }
