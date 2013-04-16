@@ -192,8 +192,8 @@ public class HelloController {
     @RequestMapping("debug/dbs")
     public String nuket() {
         SeedTestData std = new SeedTestData();
-        std.Nuket();
-        return "redirect:home";
+        std.Nuket(dao);
+        return "redirect:/home";
     }
     
     

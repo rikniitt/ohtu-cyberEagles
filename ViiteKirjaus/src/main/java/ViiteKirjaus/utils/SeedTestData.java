@@ -16,10 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  */
 public class SeedTestData {
 
-    @Autowired ViiteDao dao;
 
-
-    public void Nuket() {
+    public void Nuket(ViiteDao dao) {
         Viite k;
         
         Attribuutti[] a;
