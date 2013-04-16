@@ -22,7 +22,7 @@
         
         <h2>Bibtex</h2>
         <p>
-            <textarea cols="32" rows="12">${parsed}</textarea>
+            <textarea cols="32" rows="12" id="parsed-output">${parsed}</textarea>
         </p>
         
         <p><a href="/home">Takaisin</a></p>
