@@ -11,7 +11,7 @@ scenario "Tutkija voi syöttää konferenssiviitteen tiedot (ID, Kirjoittaja, Ot
     }
 
 
-    when 'artikkeln tiedot syötetään', {
+    when 'artikkelin tiedot syötetään', {
 
         element = driver.findElement(By.name("ID"))
         element.sendKeys("PM01")
@@ -40,7 +40,6 @@ scenario "Tutkija voi syöttää konferenssiviitteen tiedot (ID, Kirjoittaja, Ot
 
     then 'tutkija näkee konferenssin tiedot', {
         parsedOuput = driver.findElement(By.id('parsed-output')).getText() 
-        parsedOuput.contains("PM01").shouldBe true
         parsedOuput.contains("Eetu Etukumara").shouldBe true
         parsedOuput.contains("Eetun aiempi kokemus").shouldBe true
         parsedOuput.contains("2001").shouldBe true
