@@ -48,12 +48,19 @@ public class HelloController {
     
     @RequestMapping("viite/{id}")
     public ModelAndView viiteNayta(@PathVariable("id") int id) {
-        Viite v = (dao.findById(id) == null) ? new Viite("empty", new Attribuutti[]{}) : dao.findById(id);
+        Viite v = dao.findById(id);
+        if (v == null) {
+            // passataan viewille "dummy" viite olio
+            v = new Viite("empty", new Attribuutti[]{});
+        }
+        
         ModelAndView result = new ModelAndView("viite");
         result.addObject("viite", v);
+        
         BibtexKaannin kaannin = new BibtexKaannin();
         String parsittu = kaannin.kaanna(v);
         result.addObject("parsed", parsittu);
+        
         return result;
     }
     
