@@ -6,6 +6,7 @@ import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.services.BibtexKaannin;
 import ViiteKirjaus.services.data_access.ViiteDao;
+import ViiteKirjaus.utils.SeedTestData;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -185,6 +186,13 @@ public class HelloController {
         result.addObject("parsed", parsittu);
         return result;
         
+    }
+    
+    @RequestMapping("debug/dbs")
+    public String nuket() {
+        SeedTestData std = new SeedTestData();
+        std.Nuket();
+        return "redirect:home";
     }
     
     
