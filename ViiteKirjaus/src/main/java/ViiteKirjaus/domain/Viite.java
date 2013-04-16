@@ -50,7 +50,7 @@ public class Viite {
         this.attribuutit = karsinta;
 
         
-        //generoiId();
+        generoiId();
 
     }
     

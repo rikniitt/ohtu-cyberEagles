@@ -22,7 +22,7 @@ public class SqlViiteDao implements ViiteDao{
 
     @Override
     public List<Viite> listAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return server.find(Viite.class).findList();
     }
 
     @Override
