@@ -5,6 +5,7 @@
 package ViiteKirjaus.domain;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -58,12 +59,9 @@ public class Viite {
         for (Attribuutti attribuutti : attribuutit) {
             if (attribuutti.getNimi().equals("author")){
                 author = attribuutti.getArvo();
-            } 
-        }
-        for (Attribuutti attribuutti : attribuutit) {
-            if (attribuutti.getNimi().equals("year")){
+            } else if (attribuutti.getNimi().equals("year") && attribuutti.getArvo().length() == 4){
                 year = attribuutti.getArvo();
-            }
+            } 
         }
         String ID = author.substring(0, 1);
         boolean kirjainLisatty = true;
@@ -91,11 +89,8 @@ public class Viite {
                 return;
             }
         }
-
         attribuutit.add(0, new Attribuutti("id", ID));
-
     }
-
 
     
     public String getAttribuutti(String nimi){

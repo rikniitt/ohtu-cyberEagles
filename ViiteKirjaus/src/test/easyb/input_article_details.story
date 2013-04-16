@@ -48,7 +48,6 @@ scenario "Tutkija voi syöttää artikkeliviitteen tiedot (ID, Kirjoittaja, Otsi
 
     then 'tutkija näkee artikkelin tiedot', {
         parsedOuput = driver.findElement(By.id('parsed-output')).getText() 
-        parsedOuput.contains("PM01").shouldBe true
         parsedOuput.contains("Eetu Etukumara").shouldBe true
         parsedOuput.contains("Eetun kokemukset integraatio testaajana").shouldBe true
         parsedOuput.contains("Test Ninja Monthly").shouldBe true

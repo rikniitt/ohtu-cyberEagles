@@ -113,6 +113,7 @@ public class ViiteTest {
     public void idGeneroituuOikeinJosYksiAuthor()   {
         Viite k =new Viite("book",
                 new Attribuutti[]{
+                    //new Attribuutti("id", "0000"),
                     new Attribuutti("author", "Joki, Pekka"),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1999"),
@@ -126,7 +127,7 @@ public class ViiteTest {
     public void idGeneroituuOikeinJosKolmeAuthoria()   {
         Viite k =new Viite("book",
                 new Attribuutti[]{
-                    new Attribuutti("id", "0000"),
+                    //new Attribuutti("id", "0000"),
                     new Attribuutti("author", "Joki, Pekka and Kaksinen, Jukka and Kolminen, A."),
                     new Attribuutti("title", "joku raamattu"),
                     new Attribuutti("year", "1999"),
