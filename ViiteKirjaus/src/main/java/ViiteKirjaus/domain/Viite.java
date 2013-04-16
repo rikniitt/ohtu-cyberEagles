@@ -65,7 +65,7 @@ public class Viite {
                 year = attribuutti.getArvo();
             }
         }
-        String id = author.substring(0, 1);
+        String ID = author.substring(0, 1);
         boolean kirjainLisatty = true;
         
         for (int i = 0; i < author.length(); i++)   {
@@ -78,21 +78,25 @@ public class Viite {
                 continue;
             }
             if (!kirjainLisatty)    {
-                id += author.substring(i, i+1);
+                ID += author.substring(i, i+1);
                 kirjainLisatty = true;
             }
         }
         
-        id += year.substring(2, 4);
+        ID += year.substring(2, 4);
 
         for (Attribuutti attribuutti : attribuutit) {
             if (attribuutti.getNimi().equals("id")){
-                attribuutti.setArvo(id);
+                attribuutti.setArvo(ID);
                 return;
             }
         }
+<<<<<<< HEAD
+        attribuutit.add(0, new Attribuutti("id", ID));
+=======
         
         
+>>>>>>> 1952847cfbcf04c6d3c50d521ff078490dfa43dc
     }
 
 
