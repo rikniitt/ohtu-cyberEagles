@@ -91,12 +91,9 @@ public class Viite {
                 return;
             }
         }
-<<<<<<< HEAD
+
         attribuutit.add(0, new Attribuutti("id", ID));
-=======
-        
-        
->>>>>>> 1952847cfbcf04c6d3c50d521ff078490dfa43dc
+
     }
 
 
