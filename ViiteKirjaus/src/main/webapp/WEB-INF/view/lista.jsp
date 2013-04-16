@@ -9,6 +9,9 @@
     </head>
     <body>
         <h1>Kirja viitteet</h1>
+        
+        <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>
+        
 
         <table>
             <thead>
