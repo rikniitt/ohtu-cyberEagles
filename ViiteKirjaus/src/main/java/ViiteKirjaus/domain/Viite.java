@@ -5,6 +5,7 @@
 package ViiteKirjaus.domain;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -86,9 +87,9 @@ public class Viite {
             if (attribuutti.getNimi().equals("id")){
                 attribuutti.setArvo(ID);
                 return;
-            }      
-        attribuutit.add(0, new Attribuutti("id", ID));
+            }
         }
+        attribuutit.add(0, new Attribuutti("id", ID));
     }
 
     
