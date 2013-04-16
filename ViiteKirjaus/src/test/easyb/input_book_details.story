@@ -35,7 +35,6 @@ scenario "Tutkija voi syöttää kirjaviitteen tiedot (ID, Kirjailija, Titteli, 
 
     then 'tutkija näkee kirjan tiedot', {
         parsedOuput = driver.findElement(By.id('parsed-output')).getText() 
-        parsedOuput.contains("PM01").shouldBe true
         parsedOuput.contains("Aapo Avulias").shouldBe true
         parsedOuput.contains("Aapon kootut Aatokset").shouldBe true
         parsedOuput.contains("1950").shouldBe true
