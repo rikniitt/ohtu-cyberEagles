@@ -58,10 +58,7 @@ public class Viite {
         for (Attribuutti attribuutti : attribuutit) {
             if (attribuutti.getNimi().equals("author")){
                 author = attribuutti.getArvo();
-            }
-        }
-        for (Attribuutti attribuutti : attribuutit) {
-            if (attribuutti.getNimi().equals("year")){
+            } else if (attribuutti.getNimi().equals("year")){
                 year = attribuutti.getArvo();
             }
         }
@@ -91,6 +88,7 @@ public class Viite {
                 return;
             }
         }
+        
         
     }
 
