@@ -65,11 +65,11 @@ public class Viite {
         for (Attribuutti attribuutti : attribuutit) {
             if (attribuutti.getNimi().equals("author")){
                 author = attribuutti.getArvo();
-            } else if (attribuutti.getNimi().equals("year")){
+            } else if (attribuutti.getNimi().equals("year") && attribuutti.getArvo().length() == 4){
                 year = attribuutti.getArvo();
-            }
+            } 
         }
-        String id = author.substring(0, 1);
+        String ID = author.substring(0, 1);
         boolean kirjainLisatty = true;
         
         for (int i = 0; i < author.length(); i++)   {
@@ -82,23 +82,21 @@ public class Viite {
                 continue;
             }
             if (!kirjainLisatty)    {
-                id += author.substring(i, i+1);
+                ID += author.substring(i, i+1);
                 kirjainLisatty = true;
             }
         }
         
-        id += year.substring(2, 4);
+        ID += year.substring(2, 4);
 
         for (Attribuutti attribuutti : attribuutit) {
             if (attribuutti.getNimi().equals("id")){
-                attribuutti.setArvo(id);
+                attribuutti.setArvo(ID);
                 return;
-            }
+            }      
+        attribuutit.add(0, new Attribuutti("id", ID));
         }
-        
-        
     }
-
 
     
     public String getAttribuutti(String nimi){

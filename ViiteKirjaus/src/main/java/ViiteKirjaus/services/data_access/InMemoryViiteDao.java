@@ -10,15 +10,19 @@ import org.springframework.stereotype.Service;
 public class InMemoryViiteDao implements ViiteDao{
 
     private List<Viite> viitteet;
+    
+    private int id;
 
     public InMemoryViiteDao() {
         viitteet = new ArrayList<Viite>();
+        id = 100;
     }
     
     
     
     @Override
     public void add(Viite viite) {
+        viite.setId( seuraavaId() );
         viitteet.add(viite);
     }
 
@@ -28,8 +32,10 @@ public class InMemoryViiteDao implements ViiteDao{
     }
 
     
-    
-    
+    private int seuraavaId() {
+        return id++;
+    }
+
     
     
     public List<Viite> getViitteet() {
