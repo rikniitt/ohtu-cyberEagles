@@ -8,7 +8,7 @@
         <title>Kirja viitteet</title>
     </head>
     <body>
-        <h2>Bibtex</h2>
+        <h2>Kaikki viitteet</h2>
         <p>
             <textarea cols="32" rows="12" id="parsed-output">${all}</textarea>
         </p>
