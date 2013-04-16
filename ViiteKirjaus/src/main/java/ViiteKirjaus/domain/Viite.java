@@ -49,7 +49,7 @@ public class Viite {
         this.attribuutit = karsinta;
 
         
-        generoiId();
+        //generoiId();
 
     }
     
@@ -122,14 +122,6 @@ public class Viite {
 
     public void setAttribuutit(List<Attribuutti> attribuutit) {
         this.attribuutit = attribuutit;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    } 
 
 }

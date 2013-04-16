@@ -5,7 +5,9 @@
 package ViiteKirjaus.services.data_access;
 
 import ViiteKirjaus.domain.Viite;
+import ViiteKirjaus.utils.SeedTestData;
 import com.avaje.ebean.EbeanServer;
+import com.avaje.ebean.validation.AssertTrue;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -32,7 +34,9 @@ public class SqlViiteDaoTest {
         DB_config inMemoryTestCongig = new DB_configMemory(true, "test");
         testServer = inMemoryTestCongig.getServer();
         viiteDao = new SqlViiteDao(testServer);
-
+        InMemoryViiteDao testiViite = new InMemoryViiteDao();
+        new SeedTestData().Nuket(testiViite);
+        viitteita = testiViite.getViitteet();
     }
 
 
@@ -40,9 +44,11 @@ public class SqlViiteDaoTest {
      * Test of listAll method, of class SqlViiteDao.
      */
     @Test
-    public void testAddYhdenLisaysOnnistuu() {
-        assertTrue(true);
+    public void testAddYhdenLisaysJaHakuOnnistuu() {
+        viiteDao.add(viitteita.get(0));
+        assertTrue(viiteDao.findById(1).getId() == viitteita.get(0).getId());
     }
+    
 
 
     /**
