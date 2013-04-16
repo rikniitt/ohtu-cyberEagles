@@ -29,15 +29,12 @@ public class SqlViiteDaoTest {
     
     @Before
     public void setUp() {
-//        DB_config inMemoryTestCongig = new DB_configMemory(true, "test");
-//        testServer = inMemoryTestCongig.getServer();
-//        viiteDao = new SqlViiteDao(testServer);
-//        luoTestiviitteita();
+        DB_config inMemoryTestCongig = new DB_configMemory(true, "test");
+        testServer = inMemoryTestCongig.getServer();
+        viiteDao = new SqlViiteDao(testServer);
+        luoTestiviitteita();
     }
-    
-    private void luoTestiviitteita(){
-        
-    }
+
 
     /**
      * Test of listAll method, of class SqlViiteDao.

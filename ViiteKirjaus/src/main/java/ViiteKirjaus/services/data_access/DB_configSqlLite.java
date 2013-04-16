@@ -4,6 +4,8 @@
  */
 package ViiteKirjaus.services.data_access;
 
+import ViiteKirjaus.domain.Attribuutti;
+import ViiteKirjaus.domain.Viite;
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.EbeanServer;
 import com.avaje.ebean.EbeanServerFactory;
@@ -49,15 +51,18 @@ public class DB_configSqlLite implements DB_config {
         config.setDatabasePlatform(new SQLitePlatform());
         config.getDataSourceConfig().setIsolationLevel(Transaction.READ_UNCOMMITTED);
 
-
         config.setDefaultServer(false);
         config.setRegister(false);
 
         if (dropAndCreateDatabase) {
             config.setDdlGenerate(true);
             config.setDdlRun(true);
-            //config.setDebugSql(true);
+            config.setDebugSql(true);
         }
+        
+//        config.addClass(Attribuutti.class);        
+//        config.addClass(Viite.class);
+
 
         return EbeanServerFactory.create(config);
     }
