@@ -44,7 +44,21 @@ public class HelloController {
 //    }
     
     
+    
+    @RequestMapping("listaaKaikki")
+    public ModelAndView listaaKaikki() {
+        ModelAndView result = new ModelAndView("listaaKaikki");
+        BibtexKaannin kaannin = new BibtexKaannin();
         
+        String kaikki = "";
+        ArrayList<Viite> viitteet = (ArrayList<Viite>) dao.listAll();
+        for (int i = 0; i < viitteet.size(); i++){
+            kaikki += kaannin.kaanna(viitteet.get(i)) + "\n\n";
+        }
+                
+        result.addObject("all", kaikki);
+        return result;
+    }    
     
     @RequestMapping("viite/{id}")
     public ModelAndView viiteNayta(@PathVariable("id") int id) {
