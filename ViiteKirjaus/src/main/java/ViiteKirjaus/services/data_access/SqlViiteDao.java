@@ -34,5 +34,6 @@ public class SqlViiteDao implements ViiteDao{
     public Viite findById(int id) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
     
 }

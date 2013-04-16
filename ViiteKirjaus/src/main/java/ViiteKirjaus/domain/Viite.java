@@ -60,7 +60,7 @@ public class Viite {
                 author = attribuutti.getArvo();
             } else if (attribuutti.getNimi().equals("year") && attribuutti.getArvo().length() == 4){
                 year = attribuutti.getArvo();
-            }
+            } 
         }
         String ID = author.substring(0, 1);
         boolean kirjainLisatty = true;
@@ -86,11 +86,10 @@ public class Viite {
             if (attribuutti.getNimi().equals("id")){
                 attribuutti.setArvo(ID);
                 return;
-            }
-        }        
+            }      
         attribuutit.add(0, new Attribuutti("id", ID));
+        }
     }
-
 
     
     public String getAttribuutti(String nimi){
