@@ -66,6 +66,7 @@ scenario "Tutkija voi siirtyä linkin avulla viitteiden listaamiseen", {
     then 'tutkija on kirjanlisäyssivulla', {
         driver.getPageSource().contains("Kirja viitteet").shouldBe true
     }
+}
 
 scenario "Tutkija voi siirtyä linkin avulla kaikkien viitteiden listaamiseen", {
     given 'tutkija on etusivulla', {
