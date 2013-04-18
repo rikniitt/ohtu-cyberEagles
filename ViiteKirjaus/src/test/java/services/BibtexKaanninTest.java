@@ -104,4 +104,48 @@ public class BibtexKaanninTest {
                 "}",
                 bk.kaanna(k));
     }
+    
+    @Test
+    public void testViitteellaOnIdAttribuuttiKaantamisenJalkeen() {
+        Viite v = new Viite("book", new Attribuutti[]{
+                    new Attribuutti("id", "AB12"),
+                    new Attribuutti("author", "Samu Sankari"),
+                    new Attribuutti("title", "Kvartaalitalouden vaikutukset 1970-luvulla rakennettujen lähiöiden arkkitehtuuriin."),
+                    new Attribuutti("year", "2007"),
+                    new Attribuutti("publisher", "Oy Paino Ab"),
+                    new Attribuutti("pages", "121-207")
+        });
+        
+        bk.kaanna(v);
+        
+        //assertEquals("AB12", v.getAttribuutti("id"));
+       
+        boolean loytyi = false;
+        
+        for (Attribuutti attr : v.getAttribuutit()) {
+            if (attr.getNimi().equals("id")) {
+                loytyi = true;
+            }
+        }
+        assertTrue(loytyi);
+    }
+    
+    @Test
+    public void testViitteellaAttribuuttejaYhtamontaKaantamisenJalkeen() {
+        Viite v = new Viite("book", new Attribuutti[]{
+                    new Attribuutti("id", "AB12"),
+                    new Attribuutti("author", "Samu Sankari"),
+                    new Attribuutti("title", "Kvartaalitalouden vaikutukset 1970-luvulla rakennettujen lähiöiden arkkitehtuuriin."),
+                    new Attribuutti("year", "2007"),
+                    new Attribuutti("publisher", "Oy Paino Ab"),
+                    new Attribuutti("pages", "121-207")
+        });
+        
+        int attribuutteja = v.getAttribuutit().size();
+        
+        bk.kaanna(v);
+        
+        assertEquals(attribuutteja, v.getAttribuutit().size());
+    }
+    
 }
