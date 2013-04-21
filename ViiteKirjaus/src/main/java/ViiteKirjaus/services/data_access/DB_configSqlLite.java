@@ -25,7 +25,7 @@ public class DB_configSqlLite implements DB_config {
     public DB_configSqlLite(boolean dropAndCreateDatabase) {
         this(dropAndCreateDatabase, "viitekanta");
     }
-    
+
     public DB_configSqlLite(boolean dropAndCreateDatabase, String dbName) {
         if (server == null) {
             server = initializeDatabase(dropAndCreateDatabase, dbName);
@@ -54,15 +54,14 @@ public class DB_configSqlLite implements DB_config {
         config.setDefaultServer(false);
         config.setRegister(false);
 
+        config.addClass(Attribuutti.class);
+        config.addClass(Viite.class);
+
         if (dropAndCreateDatabase) {
             config.setDdlGenerate(true);
             config.setDdlRun(true);
             config.setDebugSql(true);
         }
-        
-//        config.addClass(Attribuutti.class);        
-//        config.addClass(Viite.class);
-
 
         return EbeanServerFactory.create(config);
     }

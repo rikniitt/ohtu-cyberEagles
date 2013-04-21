@@ -5,9 +5,10 @@ package ViiteKirjaus.controller;
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.services.BibtexKaannin;
-import ViiteKirjaus.services.data_access.ViiteDao;
+import ViiteKirjaus.services.data_access.*;
 import ViiteKirjaus.utils.SeedTestData;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+
 
 @Controller
 public class HelloController {
@@ -33,7 +36,7 @@ public class HelloController {
         
         ModelAndView result = new ModelAndView("lista");
 
-        result.addObject("viitteet",dao.listAll());
+        result.addObject("viitteet",Tietokanta.levylla().listaa().kaikki_viitteet());
         return result;
     }
     
@@ -51,7 +54,7 @@ public class HelloController {
         BibtexKaannin kaannin = new BibtexKaannin();
         
         String kaikki = "";
-        ArrayList<Viite> viitteet = (ArrayList<Viite>) dao.listAll();
+        List<Viite> viitteet = Tietokanta.levylla().listaa().kaikki_viitteet();
         for (int i = 0; i < viitteet.size(); i++){
             kaikki += kaannin.kaanna(viitteet.get(i)) + "\n\n";
         }
@@ -62,7 +65,7 @@ public class HelloController {
     
     @RequestMapping("viite/{id}")
     public ModelAndView viiteNayta(@PathVariable("id") int id) {
-        Viite v = dao.findById(id);
+        Viite v = Tietokanta.levylla().etsi().viite_jonka_id(id);
         if (v == null) {
             // passataan viewille "dummy" viite olio
             v = new Viite("empty", new Attribuutti[]{});
@@ -103,7 +106,7 @@ public class HelloController {
                 });
 
         
-        dao.add(kirja);
+        Tietokanta.levylla().tallenna().viite(kirja);
         
         
         BibtexKaannin kaannin = new BibtexKaannin();
@@ -155,7 +158,7 @@ public class HelloController {
                     new Attribuutti("address", address)
                 });
 
-        dao.add(artikkeli);
+        Tietokanta.levylla().tallenna().viite(artikkeli);
         
         
         BibtexKaannin kaannin = new BibtexKaannin();
@@ -196,8 +199,8 @@ public class HelloController {
                     new Attribuutti("address", address)
                 });
 
-        dao.add(konferenssi);
-        
+        //dao.add(konferenssi);
+        Tietokanta.levylla().tallenna().viite(konferenssi);
         
         BibtexKaannin kaannin = new BibtexKaannin();
         String parsittu = kaannin.kaanna(konferenssi);

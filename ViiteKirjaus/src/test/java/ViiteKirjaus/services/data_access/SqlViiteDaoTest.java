@@ -32,7 +32,7 @@ public class SqlViiteDaoTest {
     
     @Before
     public void setUp() {
-        DB_config inMemoryTestCongig = new DB_configMemory(true, "test");
+        DB_config inMemoryTestCongig = new DB_configMemory(true, "sqlViiteDaoTestDb");
         testServer = inMemoryTestCongig.getServer();
         viiteDao = new SqlViiteDao(testServer);
         InMemoryViiteDao testiViite = new InMemoryViiteDao();
