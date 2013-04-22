@@ -8,6 +8,9 @@
         <title>Kirja viitteet</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
         <h2>Kaikki viitteet</h2>
         <p>
             <textarea cols="32" rows="12" id="parsed-output">${all}</textarea>

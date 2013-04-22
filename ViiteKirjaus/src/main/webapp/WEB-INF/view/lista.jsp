@@ -8,6 +8,9 @@
         <title>Kirja viitteet</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
         <h1>Kirja viitteet</h1>
         
         <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>

@@ -7,6 +7,9 @@
         <title>konferenssiviitteen lisäys</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
 	<h1>Lisää konferenssiviite</h1>
 	<form method="POST" action="">
 	  <label>ID: <input type="text" name="ID" /></label><p>

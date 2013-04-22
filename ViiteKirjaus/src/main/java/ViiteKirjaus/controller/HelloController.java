@@ -23,11 +23,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 
-    @Autowired ViiteDao dao;
 
     @RequestMapping("*")
-    public String index() {
-        return "etusivu";
+    public ModelAndView index() {
+        ModelAndView result = new ModelAndView("etusivu");
+
+        result.addObject("viitteet",Tietokanta.levylla().listaa().kaikki_viitteet());
+        return result;
     }
     
     
@@ -216,7 +218,7 @@ public class HelloController {
     @RequestMapping("debug/dbs")
     public String nuket() {
         SeedTestData std = new SeedTestData();
-        std.Nuket(dao);
+        std.Nuket(new InMemoryViiteDao());
         return "redirect:/home";
     }
     

@@ -7,6 +7,9 @@
         <title>Kirjaviitekirjaus</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
 	<h1>Lisää kirjaviite</h1>
 	<form method="POST" action="">
 	  <label>ID: <input type="text" name="ID" /></label><p>

@@ -56,13 +56,13 @@ public class HelloControllerTest {
 //        this.response = new MockHttpServletResponse();
 //    }
     
-    
-   @Test
-   public void testHelloControllerEtusivuPalauttaaOikeanViewin() {
-       HelloController c= new HelloController();
-       String view = c.index();
-       Assert.assertEquals("etusivu", view);
-   }
+//    
+//   @Test
+//   public void testHelloControllerEtusivuPalauttaaOikeanViewin() {
+//       HelloController c= new HelloController();
+//       String view = c.index();
+//       Assert.assertEquals("etusivu", view);
+//   }
    
 //   @Test
 //   public void testHelloControllerListaPalauttaaOikeanViewin() {

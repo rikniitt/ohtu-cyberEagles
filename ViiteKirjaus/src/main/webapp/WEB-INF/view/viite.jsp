@@ -8,6 +8,9 @@
         <title>Kirja viitteet</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
         <h1>Viite ${viite.id}</h1>
         
         <h2>Tyyppi</h2>
