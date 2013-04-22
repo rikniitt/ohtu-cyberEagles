@@ -18,12 +18,12 @@
  	  <label>Vuosi: <input type="text" name="vuosi" /></label><p>
 	  <label>julkaisija: <input type="text" name="julkaisija" /></label><p>
 	  <label>osoite: <input type="text" name="osoite" /></label><p>
-	  <input type="submit" />
+	  <input type="submit" name="add" value="Lisää" />
 	</form>
         
         <c:if test="${not empty viite}" >
             <p>
-                Lisätty viite <a href="/viite/${viite.id}">viite</a>
+                Näytä lisätty <a href="/viite/${viite.id}">viite</a>
                 <pre id="parsed-output">${parsed}</pre> 
             </p>
         </c:if>

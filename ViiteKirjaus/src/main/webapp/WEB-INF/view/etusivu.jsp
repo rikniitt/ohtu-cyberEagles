@@ -12,12 +12,12 @@
         <%@include file="mainnavi.jsp" %>
 
         
-        <h1 id="welcome-text">Arton viite kirjaus</h1>
+        <h1 id="welcome-text">Arton viitekirjaus</h1>
 
         
-        <h2>Kirja viitteet</h2>
+        <h2>Viitteet</h2>
         
-        <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>
+        <p><a href="/listaaKaikki">generoi bibtex-viitteet kaikista</a></p>
         
 
         <table>

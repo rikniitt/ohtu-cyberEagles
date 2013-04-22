@@ -85,7 +85,7 @@ public class HelloController {
     
     @RequestMapping("viite/{id}/poista")
     public String viitePoista(@PathVariable("id") int id) {
-        Tietokanta.levylla().poista();
+        Tietokanta.levylla().poista().viite(id);
         
         return "redirect:/home";
         
