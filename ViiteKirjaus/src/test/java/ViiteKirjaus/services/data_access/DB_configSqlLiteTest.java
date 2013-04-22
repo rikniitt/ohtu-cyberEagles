@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package services.data_access;
+package ViiteKirjaus.services.data_access;
 
 import ViiteKirjaus.services.data_access.DB_configSqlLite;
 import ViiteKirjaus.services.data_access.DB_config;
@@ -28,7 +28,7 @@ public class DB_configSqlLiteTest {
 
     @Before
     public void setUp() {
-            db_config = new DB_configSqlLite(true, "test");
+            db_config = new DB_configSqlLite(true, "testLiteDb");
             server = db_config.getServer();
     }
 

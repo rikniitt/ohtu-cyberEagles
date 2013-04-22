@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package services.data_access;
+package ViiteKirjaus.services.data_access;
 
 import ViiteKirjaus.services.data_access.DB_configMemory;
 import ViiteKirjaus.services.data_access.DB_config;
@@ -28,7 +28,7 @@ public class DB_configMemoryTest {
 
     @Before
     public void setUp() {
-            db_config = new DB_configMemory(true, "test");
+            db_config = new DB_configMemory(true, "testMemoryDb");
             server = db_config.getServer();
     }
 

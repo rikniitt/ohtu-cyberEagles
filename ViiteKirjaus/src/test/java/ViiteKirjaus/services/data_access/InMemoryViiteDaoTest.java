@@ -1,5 +1,5 @@
 
-package services.data_access;
+package ViiteKirjaus.services.data_access;
 
 import ViiteKirjaus.services.data_access.InMemoryViiteDao;
 import ViiteKirjaus.domain.Attribuutti;
