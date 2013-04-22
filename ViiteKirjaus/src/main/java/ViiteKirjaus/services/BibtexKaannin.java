@@ -27,8 +27,20 @@ public class BibtexKaannin {
                 });
 //
         BibtexKaannin b = new BibtexKaannin();
-        String kkk = b.kaanna(k);
-        System.out.println(kkk);
+        String kaannos = b.kaanna(k);
+        System.out.println(kaannos);
+        
+        
+        Viite v = new Viite("book", new Attribuutti[]{
+                    new Attribuutti("id", "Ö12"),
+                    new Attribuutti("author", "Öhman J."),
+                    new Attribuutti("title", "Jääkausi"),
+                    new Attribuutti("year", "2012"),
+                    new Attribuutti("publisher", "Oy Åland Ab"),
+                    new Attribuutti("pages", "121-207")
+        });
+        kaannos = b.kaannaAakkosetLatexMuotoon(v);
+        System.out.println(kaannos);
     }
 
     public String kaanna(Viite k) {
@@ -63,6 +75,33 @@ public class BibtexKaannin {
 
 
 
+        return kaannos;
+    }
+    
+    public String kaannaAakkosetLatexMuotoon(Viite k)  {
+        String kaannos = kaanna(k);
+        
+        for (int i = 0; i < kaannos.length(); i++)  {
+            if (kaannos.charAt(i) == 'å')   {
+                kaannos = kaannos.substring(0, i) + "\\{aa}" + kaannos.substring(i+1, kaannos.length());
+            }
+            if (kaannos.charAt(i) == 'ä')   {
+                kaannos = kaannos.substring(0, i) + "\\\"{a}" + kaannos.substring(i+1, kaannos.length());
+            }
+            if (kaannos.charAt(i) == 'ö')   {
+                kaannos = kaannos.substring(0, i) + "\\\"{o}" + kaannos.substring(i+1, kaannos.length());
+            }
+            if (kaannos.charAt(i) == 'Å')   {
+                kaannos = kaannos.substring(0, i) + "\\{AA}" + kaannos.substring(i+1, kaannos.length());
+            }
+            if (kaannos.charAt(i) == 'Ä')   {
+                kaannos = kaannos.substring(0, i) + "\\\"{A}" + kaannos.substring(i+1, kaannos.length());
+            }
+            if (kaannos.charAt(i) == 'Ö')   {
+                kaannos = kaannos.substring(0, i) + "\\\"{O}" + kaannos.substring(i+1, kaannos.length());
+            } 
+        }
+        
         return kaannos;
     }
 
