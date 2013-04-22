@@ -39,7 +39,7 @@ scenario "Tutkija navigoi etusivulle ja näkee lisäämänsä viitteet", {
 
     then 'tutkija on etusivulla ja näkee lisätyt viitteet', {
         element = driver.findElement(By.id("welcome-text"));    
-        element.getText().contains("Arton viite kirjaus").shouldBe true
+        element.getText().contains("Arton viitekirjaus").shouldBe true
 
 
         driver.getPageSource().contains("title = Eetun kokemukset integraatio testaajana").shouldBe true

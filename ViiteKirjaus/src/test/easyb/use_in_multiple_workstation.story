@@ -15,7 +15,7 @@ scenario "Tutkija voi navigoida etusivulla", {
 
     then 'tutkija on etusivulla', {
         element = driver.findElement(By.id("welcome-text"));    
-        element.getText().contains("Arton viite kirjaus").shouldBe true
+        element.getText().contains("Arton viitekirjaus").shouldBe true
     }
 }
 
@@ -30,6 +30,6 @@ scenario "Tutkija syöttää olemattoman alasivun osoittee ja päätyy etusivull
 
     then 'tutkija on etusivulla', {
         element = driver.findElement(By.id("welcome-text"));    
-        element.getText().contains("Arton viite kirjaus").shouldBe true
+        element.getText().contains("Arton viitekirjaus").shouldBe true
     }
 }
