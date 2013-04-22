@@ -46,11 +46,3 @@ scenario "Lisätty viite on näkyvissä viite listassa", {
         driver.getPageSource().contains("address = Eetunkuja 3").shouldBe true
     }
 }
-
-scenario "", {
-    given ''
-
-    when ''
-
-    then ''
-}
