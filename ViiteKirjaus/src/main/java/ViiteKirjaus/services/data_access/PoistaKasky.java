@@ -19,8 +19,7 @@ public class PoistaKasky {
         this.server = server;
     }
     
-    public void viite(Viite viite){
-//        new SqlViiteDao(server).
-//        server.
+    public void viite(int id){
+        new SqlViiteDao(server).delete(id);
     }
 }
