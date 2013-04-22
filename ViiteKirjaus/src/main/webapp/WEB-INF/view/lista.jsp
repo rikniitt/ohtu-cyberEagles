@@ -36,6 +36,7 @@
                             </c:forEach>
                         </td>
                         <td><a href="viite/${viite.id}" >Näytä</a></td>
+                        <td><a href="viite/${viite.id}/poista" >Poista</a></td>
                     </tr>
                    
                  </c:forEach>

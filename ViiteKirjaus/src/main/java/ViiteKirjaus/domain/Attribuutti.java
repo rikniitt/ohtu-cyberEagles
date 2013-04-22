@@ -63,5 +63,15 @@ public class Attribuutti {
     public void setArvo(String arvo) {
         this.arvo = arvo;
     }
+
+    public Viite getViite() {
+        return viite;
+    }
+
+    public void setViite(Viite viite) {
+        this.viite = viite;
+    }
+    
+    
     
 }

@@ -62,12 +62,84 @@ public class SqlViiteDaoTest {
         InMemoryViiteDao testiViite = new InMemoryViiteDao();
         new SeedTestData().Nuket(testiViite);
         List<Viite> lista = viiteDao.listAll();
-        assertEquals(testiViite.listAll().size() + 1, viiteDao.listAll().size());
+        assertTrue(testiViite.listAll().size() <= viiteDao.listAll().size());
     }
     
     @Test
     public void testListaaNimenMukaanEiLoydyNimella () {
+        List<Viite> tyhjaLista = viiteDao.listByAuthor("Olematon Kirjailija");
+        assertEquals(0, tyhjaLista.size());
+    }
+    
+    @Test
+    public void testListaaNimenMukaanYksiLoytyyNimella () {
+        Attribuutti[] a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja")
+                };
         
+        Viite k = new Viite("book", a);
+        viiteDao.add(k);
+        List<Viite> lista = viiteDao.listByAuthor("kirjailija");
+        assertEquals(1, lista.size());
+    }
+    
+    @Test
+    public void testListaaNimenMukaanKolmeLoytyyNimella () {
+        Attribuutti[] a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija2"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja1")
+                };
+        
+        Viite k = new Viite("book", a);
+        viiteDao.add(k);
+        a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija2"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja2")
+                };
+        
+        k = new Viite("book", a);
+        viiteDao.add(k);
+        a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija2"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja3")
+                };
+        
+        k = new Viite("book", a);
+        viiteDao.add(k);
+        
+        List<Viite> lista = viiteDao.listByAuthor("kirjailija2");
+        assertEquals(3, lista.size());
+    }
+    
+    @Test
+    public void testPoistoIDllaJotaEiLoydy() {
+        viiteDao.delete(Integer.MAX_VALUE);
+    }
+    
+    
+    @Test
+    public void testYksiLisattyPoistonJalkeenListaaNimenMukaanEiLoydaYhtaan () {
+        Attribuutti[] a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija3"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja")
+                };
+        
+        Viite k = new Viite("book", a);
+        viiteDao.add(k);
+        viiteDao.delete(k.getId());
+        List<Viite> lista = viiteDao.listByAuthor("kirjailija3");
+        assertEquals(0, lista.size());
     }
 
     /**
