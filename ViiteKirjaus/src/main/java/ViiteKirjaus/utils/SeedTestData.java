@@ -6,6 +6,7 @@ package ViiteKirjaus.utils;
 
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
+import ViiteKirjaus.services.data_access.*;
 import ViiteKirjaus.services.data_access.ViiteDao;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class SeedTestData {
         
         k = new Viite("book", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -42,6 +44,7 @@ public class SeedTestData {
         
         k = new Viite("book", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -56,6 +59,7 @@ public class SeedTestData {
         
         k = new Viite("INPROCEEDINGS", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -68,6 +72,7 @@ public class SeedTestData {
         
         k = new Viite("inproceedings", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -85,6 +90,7 @@ public class SeedTestData {
         
         k = new Viite("article", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -96,6 +102,7 @@ public class SeedTestData {
         
         k = new Viite("book", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
         
         a = new Attribuutti[]{
@@ -107,6 +114,7 @@ public class SeedTestData {
         
         k = new Viite("book", a);
         
+        Tietokanta.levylla().tallenna().viite(k);
         dao.add(k);
 
 
