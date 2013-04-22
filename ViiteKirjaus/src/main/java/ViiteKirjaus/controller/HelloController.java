@@ -226,6 +226,22 @@ public class HelloController {
         
     }
     
+    @RequestMapping("haku")
+    public String viiteHaku() {
+        return "haku";
+    }
+    
+    @RequestMapping(value = "haku", method = RequestMethod.POST)
+    public ModelAndView viiteHakuKasittele(HttpServletRequest request, HttpServletResponse response) {
+        String searchByAuthor = request.getParameter("search-author");
+        
+        List<Viite> viitteet = Tietokanta.levylla().listaa().viitteet_joissa_kirjailijana(searchByAuthor);
+        
+        ModelAndView result = new ModelAndView("haku");
+        result.addObject("viitteet", viitteet);
+        return result;
+    }
+    
     @RequestMapping("debug/dbs")
     public String nuket() {
         SeedTestData std = new SeedTestData();
