@@ -11,6 +11,8 @@ import java.util.List;
  */
 public class BibtexKaannin {
     
+    private String sisennys = "    ";
+    
     public static void main(String[] args) {
 
         Viite k = new Viite("book",
@@ -47,6 +49,7 @@ public class BibtexKaannin {
 
         //muiden attribuuttien järjestyksellä ei väliä
         for (int i = 0; i < kaannettavatAttribuutit.size(); i++) {
+            kaannos += sisennys;
             Attribuutti a = kaannettavatAttribuutit.get(i);
             kaannos += a.getNimi() + " = {";
             if (a.getNimi().equals("pages")) {                               //käännetään sivuattribuutti oikeaan muotoon

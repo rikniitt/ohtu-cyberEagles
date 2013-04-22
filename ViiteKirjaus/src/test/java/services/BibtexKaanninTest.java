@@ -62,11 +62,11 @@ public class BibtexKaanninTest {
         
         assertEquals(
                 "@book{P20,\n" +
-                "author = {Pekka Joki},\n" +
-                "title = {joku raamattu},\n" +
-                "year = {1920},\n" +
-                "publisher = {WSOY},\n" +
-                "pages = {123--124},\n" +
+                "    author = {Pekka Joki},\n" +
+                "    title = {joku raamattu},\n" +
+                "    year = {1920},\n" +
+                "    publisher = {WSOY},\n" +
+                "    pages = {123--124},\n" +
                 "}"
                 , bk.kaanna(k));
     }
@@ -96,11 +96,11 @@ public class BibtexKaanninTest {
         
         assertEquals(
                 "@book{P20,\n" +
-                "author = {Pekka Joki},\n" +
-                "title = {joku raamattu},\n" +
-                "year = {1920},\n" +
-                "publisher = {WSOY},\n" +
-                "pages = {123--124},\n" +
+                "    author = {Pekka Joki},\n" +
+                "    title = {joku raamattu},\n" +
+                "    year = {1920},\n" +
+                "    publisher = {WSOY},\n" +
+                "    pages = {123--124},\n" +
                 "}",
                 bk.kaanna(k));
     }
