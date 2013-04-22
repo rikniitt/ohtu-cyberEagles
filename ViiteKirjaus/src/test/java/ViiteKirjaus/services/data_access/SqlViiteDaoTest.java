@@ -119,6 +119,28 @@ public class SqlViiteDaoTest {
         List<Viite> lista = viiteDao.listByAuthor("kirjailija2");
         assertEquals(3, lista.size());
     }
+    
+    @Test
+    public void testPoistoIDllaJotaEiLoydy() {
+        viiteDao.delete(Integer.MAX_VALUE);
+    }
+    
+    
+    @Test
+    public void testYksiLisattyPoistonJalkeenListaaNimenMukaanEiLoydaYhtaan () {
+        Attribuutti[] a = new Attribuutti[]{
+                    new Attribuutti("publisher", "julkaisija"),
+                    new Attribuutti("author", "kirjailija3"),
+                    new Attribuutti("year", "1900"),
+                    new Attribuutti("title", "Kirja")
+                };
+        
+        Viite k = new Viite("book", a);
+        viiteDao.add(k);
+        viiteDao.delete(k.getId());
+        List<Viite> lista = viiteDao.listByAuthor("kirjailija3");
+        assertEquals(0, lista.size());
+    }
 
     /**
      * Test of add method, of class SqlViiteDao.

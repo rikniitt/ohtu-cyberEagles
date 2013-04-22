@@ -51,4 +51,12 @@ public class SqlViiteDao implements ViiteDao {
         }
         return viitteet;
     }
+
+    void delete(Integer viitteenID) {
+        Viite viite = findById(viitteenID);
+        if (viite == null){
+            return;
+        }
+        server.delete(viite);
+    }
 }
