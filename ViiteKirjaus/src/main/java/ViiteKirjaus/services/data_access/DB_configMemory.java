@@ -4,6 +4,8 @@
  */
 package ViiteKirjaus.services.data_access;
 
+import ViiteKirjaus.domain.Attribuutti;
+import ViiteKirjaus.domain.Viite;
 import com.avaje.ebean.EbeanServer;
 import com.avaje.ebean.EbeanServerFactory;
 import com.avaje.ebean.config.DataSourceConfig;
@@ -44,8 +46,7 @@ public class DB_configMemory implements DB_config {
         hdDB.setHeartbeatSql("select 1 ");
         config.setDataSourceConfig(hdDB);
 
-
-
+        
         config.setDefaultServer(false);
         config.setRegister(false);
 
@@ -54,6 +55,9 @@ public class DB_configMemory implements DB_config {
             config.setDdlRun(true);
             //config.setDebugSql(true);
         }
+        
+        config.addClass(Viite.class);
+        config.addClass(Attribuutti.class);
 
         return EbeanServerFactory.create(config);
 

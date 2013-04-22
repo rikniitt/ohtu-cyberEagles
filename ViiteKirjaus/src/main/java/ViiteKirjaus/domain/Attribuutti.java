@@ -4,14 +4,31 @@
  */
 package ViiteKirjaus.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
 /**
  *
  * @author olzraiti
  */
+@Entity
 public class Attribuutti {
 
     private String nimi;
+    
     private String arvo;
+    
+    @Id
+    private Integer id;
+    
+    @ManyToOne
+    private Viite viite;
+
+    public Attribuutti() {
+    }
+    
+    
 
     public Attribuutti (String nimi, String arvo) {
         this.nimi = nimi;
@@ -29,6 +46,18 @@ public class Attribuutti {
     
     public String getArvo(){
         return arvo;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
     }
 
     public void setArvo(String arvo) {

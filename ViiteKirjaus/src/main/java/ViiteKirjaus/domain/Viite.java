@@ -7,8 +7,11 @@ package ViiteKirjaus.domain;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,8 +25,12 @@ public class Viite {
     
     private String tyyppi;
     
-    
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Attribuutti> attribuutit;    
+
+    public void setTyyppi(String tyyppi) {
+        this.tyyppi = tyyppi;
+    }
 
     public Viite() {
     }
@@ -102,7 +109,7 @@ public class Viite {
         return "";
     }
     
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -116,14 +123,6 @@ public class Viite {
 
     public void setAttribuutit(List<Attribuutti> attribuutit) {
         this.attribuutit = attribuutit;
-    }
-    
-    
-    
-    
-    
-    
-    
-    
+    } 
 
 }
