@@ -11,9 +11,9 @@
         
         <%@include file="mainnavi.jsp" %>
         
-        <h1>Kirja viitteet</h1>
+        <h1>Viitteet</h1>
         
-        <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>
+        <p><a href="/listaaKaikki">generoi bibtex-viitteet kaikista</a></p>
         
 
         <table>
