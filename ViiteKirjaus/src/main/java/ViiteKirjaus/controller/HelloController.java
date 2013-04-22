@@ -233,11 +233,12 @@ public class HelloController {
     
     @RequestMapping(value = "haku", method = RequestMethod.POST)
     public ModelAndView viiteHakuKasittele(HttpServletRequest request, HttpServletResponse response) {
+        String searchByAuthor = request.getParameter("search-author");
         
-        
+        List<Viite> viitteet = Tietokanta.levylla().listaa().viitteet_joissa_kirjailijana(searchByAuthor);
         
         ModelAndView result = new ModelAndView("haku");
-        result.addObject("viitteet", null);
+        result.addObject("viitteet", viitteet);
         return result;
     }
     

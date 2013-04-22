@@ -75,14 +75,14 @@ public class SqlViiteDaoTest {
     public void testListaaNimenMukaanYksiLoytyyNimella () {
         Attribuutti[] a = new Attribuutti[]{
                     new Attribuutti("publisher", "julkaisija"),
-                    new Attribuutti("author", "kirjailija"),
+                    new Attribuutti("author", "asd5sdUNIQUEfASasdfds"),
                     new Attribuutti("year", "1900"),
                     new Attribuutti("title", "Kirja")
                 };
         
         Viite k = new Viite("book", a);
         viiteDao.add(k);
-        List<Viite> lista = viiteDao.listByAuthor("kirjailija");
+        List<Viite> lista = viiteDao.listByAuthor("asd5sdUNIQUEfASasdfds");
         assertEquals(1, lista.size());
     }
     

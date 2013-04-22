@@ -23,7 +23,7 @@
 	  <input type="submit" name="search" value="Hae" />
 	</form>
 
-        <c:if test="${not empty viite}" >
+        <c:if test="${not empty viitteet}" >
         <table>
             <thead>
                 <tr>

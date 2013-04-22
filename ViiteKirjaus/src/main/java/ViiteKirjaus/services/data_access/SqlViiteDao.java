@@ -42,7 +42,7 @@ public class SqlViiteDao implements ViiteDao {
         List<Attribuutti> attribuutit =  server.find(Attribuutti.class)
                 .where()
                 .like("nimi", "author")
-                .like("arvo", Author)
+                .like("arvo", "%" + Author +"%")
                 .findList();
         ArrayList<Viite> viitteet = new ArrayList<Viite>();
         for (Attribuutti attribuutti : attribuutit) {
