@@ -77,7 +77,7 @@ scenario "Tutkija voi siirtyä linkin avulla kaikkien viitteiden listaamiseen", 
     when 'tutkija painaa viitteidenlistauslinkkiä', {
         element = driver.findElement(By.linkText("Listaa viitteet"));
         element.click();
-        element = driver.findElement(By.linkText("generoi bibtex viitteet kaikista"));
+        element = driver.findElement(By.linkText("generoi bibtex-viitteet kaikista"));
         element.click();
     }
 
