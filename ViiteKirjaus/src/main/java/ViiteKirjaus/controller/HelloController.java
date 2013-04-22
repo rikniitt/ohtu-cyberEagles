@@ -99,20 +99,20 @@ public class HelloController {
     @RequestMapping(value = "kirja/lisaa", method = RequestMethod.POST)
     public ModelAndView kirjaLisaaKasittele(HttpServletRequest request, HttpServletResponse response) {
         String ID = request.getParameter("ID");
-        String kirjailija = request.getParameter("kirjailija");
-        String titteli = request.getParameter("titteli");
-        String vuosi = request.getParameter("vuosi");
-        String julkaisija = request.getParameter("julkaisija");
-        String osoite = request.getParameter("osoite");
+        String author = request.getParameter("author");
+        String title = request.getParameter("title");
+        String year = request.getParameter("year");
+        String publisher = request.getParameter("publisher");
+        String address = request.getParameter("address");
         
         Viite kirja = new Viite("book",
                 new Attribuutti[]{
                     new Attribuutti("id", ID),
-                    new Attribuutti("author", kirjailija),
-                    new Attribuutti("title", titteli),
-                    new Attribuutti("year", vuosi),
-                    new Attribuutti("publisher", julkaisija),
-                    new Attribuutti("address", osoite)
+                    new Attribuutti("author", author),
+                    new Attribuutti("title", title),
+                    new Attribuutti("year", year),
+                    new Attribuutti("publisher", publisher),
+                    new Attribuutti("address", address)
                 });
 
         

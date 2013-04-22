@@ -56,19 +56,19 @@ scenario "Lisätty kirjaviite on näkyvissä myöhempää käyttöä varten", {
         element = driver.findElement(By.name("ID"))
         element.sendKeys("AA12")
 
-        element = driver.findElement(By.name("kirjailija"))
+        element = driver.findElement(By.name("author"))
         element.sendKeys("Iiro Itsepäinen")
 
-        element = driver.findElement(By.name("titteli"))
+        element = driver.findElement(By.name("title"))
         element.sendKeys("Iiron nuoruusvuosien haasteet")
 
-        element = driver.findElement(By.name("vuosi"))
+        element = driver.findElement(By.name("year"))
         element.sendKeys("2012")
 
-        element = driver.findElement(By.name("julkaisija"))
+        element = driver.findElement(By.name("publisher"))
         element.sendKeys("Otava")
 
-        element = driver.findElement(By.name("osoite"))
+        element = driver.findElement(By.name("address"))
         element.sendKeys("Etäkatu 12")
         
         element.submit()

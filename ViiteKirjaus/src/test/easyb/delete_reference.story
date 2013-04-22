@@ -12,19 +12,19 @@ scenario "Tutkija voi poistaa lisäämänsä viitteen etusivulla", {
         element = driver.findElement(By.linkText("Lisää kirjaviite"))
         element.click()
 
-        element = driver.findElement(By.name("kirjailija"))
+        element = driver.findElement(By.name("author"))
         element.sendKeys("Aapo Avulias")
 
-        element = driver.findElement(By.name("titteli"))
+        element = driver.findElement(By.name("title"))
         element.sendKeys("Aapon kootut Aatokset")
 
-        element = driver.findElement(By.name("vuosi"))
+        element = driver.findElement(By.name("year"))
         element.sendKeys("1950")
 
-        element = driver.findElement(By.name("julkaisija"))
+        element = driver.findElement(By.name("publisher"))
         element.sendKeys("Otava")
 
-        element = driver.findElement(By.name("osoite"))
+        element = driver.findElement(By.name("address"))
         element.sendKeys("1997")
 
         element.submit()
@@ -53,19 +53,19 @@ scenario "Tutkija voi poistaa lisäämänsä viitteen viitteiden listauksessa", 
         element = driver.findElement(By.linkText("Lisää kirjaviite"))
         element.click()
 
-        element = driver.findElement(By.name("kirjailija"))
+        element = driver.findElement(By.name("author"))
         element.sendKeys("Aapo Avulias")
 
-        element = driver.findElement(By.name("titteli"))
+        element = driver.findElement(By.name("title"))
         element.sendKeys("Aapon kootut Aatokset")
 
-        element = driver.findElement(By.name("vuosi"))
+        element = driver.findElement(By.name("year"))
         element.sendKeys("1950")
 
-        element = driver.findElement(By.name("julkaisija"))
+        element = driver.findElement(By.name("publisher"))
         element.sendKeys("Otava")
 
-        element = driver.findElement(By.name("osoite"))
+        element = driver.findElement(By.name("address"))
         element.sendKeys("1997")
 
         element.submit()

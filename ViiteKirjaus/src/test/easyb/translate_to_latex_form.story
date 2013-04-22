@@ -10,13 +10,13 @@ scenario "Tutkijana haluan kääntää lisätyt viitteet latex muotoon", {
         driver.get("http://localhost:8080/kirja/lisaa")
 
 
-        element = driver.findElement(By.name("kirjailija"))
+        element = driver.findElement(By.name("author"))
         element.sendKeys("Unto Uimari")
 
-        element = driver.findElement(By.name("titteli"))
+        element = driver.findElement(By.name("title"))
         element.sendKeys("Uskalikon Uskomattomat Uskomukset")
 
-        element = driver.findElement(By.name("vuosi"))
+        element = driver.findElement(By.name("year"))
         element.sendKeys("1988")
 
         

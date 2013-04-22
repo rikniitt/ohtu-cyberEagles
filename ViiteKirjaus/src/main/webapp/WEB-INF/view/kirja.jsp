@@ -13,11 +13,11 @@
 	<h1>Lisää kirjaviite</h1>
 	<form method="POST" action="">
 	  <label>ID: <input type="text" name="ID" /></label><p>
-	  <label>Kirjailija: <input type="text" name="kirjailija" /></label><p>
-	  <label>Titteli: <input type="text" name="titteli" /></label><p>
- 	  <label>Vuosi: <input type="text" name="vuosi" /></label><p>
-	  <label>julkaisija: <input type="text" name="julkaisija" /></label><p>
-	  <label>osoite: <input type="text" name="osoite" /></label><p>
+	  <label>Kirjailija: <input type="text" name="author" /></label><p>
+	  <label>Titteli: <input type="text" name="title" /></label><p>
+ 	  <label>Vuosi: <input type="text" name="year" /></label><p>
+	  <label>julkaisija: <input type="text" name="publisher" /></label><p>
+	  <label>address <input type="text" name="address" /></label><p>
 	  <input type="submit" name="add" value="Lisää" />
 	</form>
         
