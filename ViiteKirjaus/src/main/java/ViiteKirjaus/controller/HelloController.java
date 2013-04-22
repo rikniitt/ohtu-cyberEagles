@@ -226,6 +226,21 @@ public class HelloController {
         
     }
     
+    @RequestMapping("haku")
+    public String viiteHaku() {
+        return "haku";
+    }
+    
+    @RequestMapping(value = "haku", method = RequestMethod.POST)
+    public ModelAndView viiteHakuKasittele(HttpServletRequest request, HttpServletResponse response) {
+        
+        
+        
+        ModelAndView result = new ModelAndView("haku");
+        result.addObject("viitteet", null);
+        return result;
+    }
+    
     @RequestMapping("debug/dbs")
     public String nuket() {
         SeedTestData std = new SeedTestData();

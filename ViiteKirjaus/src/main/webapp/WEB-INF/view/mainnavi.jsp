@@ -17,6 +17,8 @@
         <li><a href="/konferenssi/lisaa">Lisää konferenssiviite</a></li>
 
         <li><a href="/lista">Listaa viitteet</a></li>
+        
+        <li><a href="/haku">Viite haku</a></li>
 
     </ul>
     <div class="clear"></div>
