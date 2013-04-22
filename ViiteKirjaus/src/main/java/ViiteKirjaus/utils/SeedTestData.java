@@ -24,6 +24,7 @@ public class SeedTestData {
         Attribuutti[] a;
 
         a = new Attribuutti[]{
+                    new Attribuutti("id", "SWEBOL"),
                     new Attribuutti("publisher", "IEEE Computer Society"),
                     new Attribuutti("editor", "Abram, Aman and More, James W. and Bourgue Pierre and Dupuis Robert"),
                     new Attribuutti("year", "2004"),
@@ -36,6 +37,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "BA04"),
                     new Attribuutti("author", "Beck, Kent and Andres, Cynthia"),
                     new Attribuutti("title", "Extreme Programming Explained: Embrace Change (2nd Edition)"),
                     new Attribuutti("year", "2004"),
@@ -48,6 +50,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "royce70"),
                     new Attribuutti("author", "Royce, Walker"),
                     new Attribuutti("title", "Managing the Development of Large Software Systems"),
                     new Attribuutti("BOOKTITLE", "Proceedings of IEEE WESCON 26"),
@@ -63,6 +66,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "Begel_2008"),
                     new Attribuutti("author", "Begel, Andrew and Simon, Beth"),
                     new Attribuutti("title", "Struggles of new college graduates in their first software development job"),
                     new Attribuutti("booktitle", "Proceedings of the SIGCSE '08"),
@@ -76,6 +80,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "fox"),
                     new Attribuutti("author", "Fox, Armando and Patterson, David"),
                     new Attribuutti("title", "Crossing the software education chasm"),
                     new Attribuutti("journal", "Communications of ACM"),
@@ -94,6 +99,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "Martin09"),
                     new Attribuutti("author", "Martin, Robert C"),
                     new Attribuutti("title", "Clean Code: A Handbook of Agile Software Craftsmanship"),
                     new Attribuutti("year", "2008"),
@@ -106,6 +112,7 @@ public class SeedTestData {
         dao.add(k);
         
         a = new Attribuutti[]{
+                    new Attribuutti("id", "scrum"),
                     new Attribuutti("author", "Ken Schwaber and Mike Beedle"),
                     new Attribuutti("publisher", "Prentice Hall"),
                     new Attribuutti("title", "Agile Software Development with SCRUM"),

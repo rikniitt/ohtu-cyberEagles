@@ -4,17 +4,36 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 description 'Tutkijana haluan kääntää viitteen tiedot latexin ymmärtämään muotoon'
  
-scenario "", {
-    given ''
-    when ''
+scenario "Tutkijana haluan kääntää lisätyt viitteet latex muotoon", {
+    given 'Kirja viite on lisätty' , {
+        driver = new HtmlUnitDriver()
+        driver.get("http://localhost:8080/kirja/lisaa")
 
-    then ''
-}
 
-scenario "", {
-    given ''
+        element = driver.findElement(By.name("kirjailija"))
+        element.sendKeys("Unto Uimari")
 
-    when ''
+        element = driver.findElement(By.name("titteli"))
+        element.sendKeys("Uskalikon Uskomattomat Uskomukset")
 
-    then ''
+        element = driver.findElement(By.name("vuosi"))
+        element.sendKeys("1988")
+
+        
+        element.submit()
+    }
+    when 'Tutkija kääntää viitteet', {
+        driver = new HtmlUnitDriver()
+        driver.get("http://localhost:8080/listaaKaikki")
+    }
+
+    then 'Lisätty kirja on käännetty latex muotoon', {
+        source = driver.getPageSource()
+
+        source.contains("@book{U88").shouldBe true
+        source.contains("author = {Unto Uimari}").shouldBe true
+        source.contains("title = {Uskalikon Uskomattomat Uskomukset}").shouldBe true
+        source.contains("year = {1988}").shouldBe true
+        
+    }
 }
