@@ -58,7 +58,7 @@ public class HelloController {
         String kaikki = "";
         List<Viite> viitteet = Tietokanta.levylla().listaa().kaikki_viitteet();
         for (int i = 0; i < viitteet.size(); i++){
-            kaikki += kaannin.kaanna(viitteet.get(i)) + "\n\n";
+            kaikki += kaannin.kaannaAakkosetLatexMuotoon(viitteet.get(i)) + "\n\n";
         }
                 
         result.addObject("all", kaikki);
@@ -77,7 +77,7 @@ public class HelloController {
         result.addObject("viite", v);
         
         BibtexKaannin kaannin = new BibtexKaannin();
-        String parsittu = kaannin.kaanna(v);
+        String parsittu = kaannin.kaannaAakkosetLatexMuotoon(v);
         result.addObject("parsed", parsittu);
         
         return result;
@@ -120,7 +120,7 @@ public class HelloController {
         
         
         BibtexKaannin kaannin = new BibtexKaannin();
-        String parsittu = kaannin.kaanna(kirja);
+        String parsittu = kaannin.kaannaAakkosetLatexMuotoon(kirja);
         //System.out.println(parsittu);
    
         
@@ -173,7 +173,7 @@ public class HelloController {
         
         
         BibtexKaannin kaannin = new BibtexKaannin();
-        String parsittu = kaannin.kaanna(artikkeli);
+        String parsittu = kaannin.kaannaAakkosetLatexMuotoon(artikkeli);
         //System.out.println(parsittu);
    
         
@@ -215,7 +215,7 @@ public class HelloController {
         Tietokanta.levylla().tallenna().viite(konferenssi);
         
         BibtexKaannin kaannin = new BibtexKaannin();
-        String parsittu = kaannin.kaanna(konferenssi);
+        String parsittu = kaannin.kaannaAakkosetLatexMuotoon(konferenssi);
         //System.out.println(parsittu);
    
         
