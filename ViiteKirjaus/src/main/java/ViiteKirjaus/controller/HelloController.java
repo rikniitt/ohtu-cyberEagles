@@ -117,6 +117,7 @@ public class HelloController {
    
         
         ModelAndView result = new ModelAndView("kirja");
+        result.addObject("viite", kirja);
         result.addObject("parsed", parsittu);
         return result;
         
@@ -169,6 +170,7 @@ public class HelloController {
    
         
         ModelAndView result = new ModelAndView("artikkeli");
+        result.addObject("viite", artikkeli);
         result.addObject("parsed", parsittu);
         return result;
         
@@ -210,6 +212,7 @@ public class HelloController {
    
         
         ModelAndView result = new ModelAndView("konferenssi");
+        result.addObject("viite", konferenssi);
         result.addObject("parsed", parsittu);
         return result;
         
