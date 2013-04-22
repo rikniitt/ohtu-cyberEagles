@@ -28,16 +28,12 @@ public class SqlViiteDaoTest {
 
     EbeanServer testServer;
     SqlViiteDao viiteDao;
-    List<Viite> viitteita;
     
     @Before
     public void setUp() {
         DB_config inMemoryTestCongig = new DB_configMemory(true, "sqlViiteDaoTestDb");
         testServer = inMemoryTestCongig.getServer();
         viiteDao = new SqlViiteDao(testServer);
-        InMemoryViiteDao testiViite = new InMemoryViiteDao();
-        new SeedTestData().Nuket(testiViite);
-        viitteita = testiViite.getViitteet();
     }
 
 
@@ -60,14 +56,19 @@ public class SqlViiteDaoTest {
     
     @Test
     public void testLisaaMontaJaListaaKaikki() {
-        for (Viite viite : viitteita) {
-            viiteDao.add(viite);
-        }
+//        for (Viite viite : viitteita) {
+//            viiteDao.add(viite);
+//        }
+        InMemoryViiteDao testiViite = new InMemoryViiteDao();
+        new SeedTestData().Nuket(testiViite);
         List<Viite> lista = viiteDao.listAll();
-        assertTrue(lista.size() == viitteita.size() + 1);
+        assertEquals(testiViite.listAll().size() + 1, viiteDao.listAll().size());
     }
     
-
+    @Test
+    public void testListaaNimenMukaanEiLoydyNimella () {
+        
+    }
 
     /**
      * Test of add method, of class SqlViiteDao.

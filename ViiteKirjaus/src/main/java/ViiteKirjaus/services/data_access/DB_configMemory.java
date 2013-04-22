@@ -17,7 +17,7 @@ import com.avaje.ebean.config.ServerConfig;
  */
 public class DB_configMemory implements DB_config {
 
-    private static EbeanServer server;
+    private static EbeanServer h2Server;
 
     public DB_configMemory(boolean dropAndCreateDatabase) {
         this(dropAndCreateDatabase, "viitekanta");
@@ -25,14 +25,14 @@ public class DB_configMemory implements DB_config {
     }
     
     public DB_configMemory(boolean dropAndCreateDatabase, String dbName) {
-        if (server == null) {
-            server = initializeDatabase(dropAndCreateDatabase, dbName);
+        if (h2Server == null) {
+            h2Server = initializeDatabase(dropAndCreateDatabase, dbName);
         }
     }
 
     @Override
     public EbeanServer getServer() {
-        return server;
+        return h2Server;
     }
 
     private EbeanServer initializeDatabase(boolean dropAndCreateDatabase, String dbName) {

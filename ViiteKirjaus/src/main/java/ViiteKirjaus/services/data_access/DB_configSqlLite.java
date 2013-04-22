@@ -20,21 +20,21 @@ import com.avaje.ebean.config.dbplatform.SQLitePlatform;
  */
 public class DB_configSqlLite implements DB_config {
 
-    private static EbeanServer server;
+    private static EbeanServer liteServer;
 
     public DB_configSqlLite(boolean dropAndCreateDatabase) {
         this(dropAndCreateDatabase, "viitekanta");
     }
 
     public DB_configSqlLite(boolean dropAndCreateDatabase, String dbName) {
-        if (server == null) {
-            server = initializeDatabase(dropAndCreateDatabase, dbName);
+        if (liteServer == null) {
+            liteServer = initializeDatabase(dropAndCreateDatabase, dbName);
         }
     }
 
     @Override
     public EbeanServer getServer() {
-        return server;
+        return liteServer;
     }
 
     private EbeanServer initializeDatabase(boolean dropAndCreateDatabase, String dbName) {
