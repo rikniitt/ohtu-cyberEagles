@@ -7,15 +7,46 @@
         <title>Etusivu</title>
     </head>
     <body>
+        
+ 
+        <%@include file="mainnavi.jsp" %>
+
+        
         <h1 id="welcome-text">Arton viite kirjaus</h1>
 
-        <a href="kirja/lisaa">Lisää kirjaviite</a>
-        <br />
-        <a href="artikkeli/lisaa">Lisää artikkeliviite</a>
-        <br />
-        <a href="konferenssi/lisaa">Lisää konferenssiviite</a>
-        <br />
-        <a href="lista">Listaa viitteet</a>
+        
+        <h2>Kirja viitteet</h2>
+        
+        <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>
+        
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Tyyppi</td>
+                    <td>Sisältö</td>    
+                    <td>ID</td>    
+                </tr>
+            </thead>
+            <tbody>
+                <c:forEach var="viite" items="${viitteet}">
+                    
+                    
+                    <tr>
+                        <td>${viite.tyyppi}</td>
+                        <td>
+                            <c:forEach var="attr" items="${viite.attribuutit}">
+                                ${attr.nimi} = ${attr.arvo}<br />
+                            </c:forEach>
+                        </td>
+                        <td><a href="viite/${viite.id}" >Näytä</a></td>
+                        <td><a href="viite/${viite.id}/poista" >Poista</a></td>
+                    </tr>
+                   
+                 </c:forEach>
+            </tbody>
+                
+        </table>
 
 
     </body>

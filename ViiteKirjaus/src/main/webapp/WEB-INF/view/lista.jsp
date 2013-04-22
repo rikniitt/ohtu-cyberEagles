@@ -8,6 +8,9 @@
         <title>Kirja viitteet</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
         <h1>Kirja viitteet</h1>
         
         <p><a href="/listaaKaikki">generoi bibtex viitteet kaikista</a></p>
@@ -33,6 +36,7 @@
                             </c:forEach>
                         </td>
                         <td><a href="viite/${viite.id}" >Näytä</a></td>
+                        <td><a href="viite/${viite.id}/poista" >Poista</a></td>
                     </tr>
                    
                  </c:forEach>

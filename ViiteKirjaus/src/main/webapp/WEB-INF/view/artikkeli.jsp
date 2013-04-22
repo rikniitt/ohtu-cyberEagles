@@ -7,6 +7,9 @@
         <title>Artikkeliviitteen lisäys</title>
     </head>
     <body>
+        
+        <%@include file="mainnavi.jsp" %>
+        
 	<h1>Lisää artikkeliviite</h1>
 	<form method="POST" action="">
 	  <label>ID: <input type="text" name="ID" /></label><p>
@@ -22,10 +25,12 @@
 	  <input type="submit" name="add" value="Lisää" />
 	</form>
         
-        <p>
-            <pre id="parsed-output">${parsed}</pre> 
-        </p>
-        
+        <c:if test="${not empty viite}" >
+            <p>
+                Lisätty viite <a href="/viite/${viite.id}">viite</a>
+                <pre id="parsed-output">${parsed}</pre> 
+            </p>
+        </c:if>
         
         <p><a href="/home">Takaisin</a></p>
     </body>
