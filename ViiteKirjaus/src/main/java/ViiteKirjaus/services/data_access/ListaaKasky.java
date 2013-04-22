@@ -21,6 +21,6 @@ public class ListaaKasky {
     }
     
     public List<Viite> kaikki_viitteet() {
-        return server.find(Viite.class).findList();
+        return new SqlViiteDao(server).listAll();
     }
 }

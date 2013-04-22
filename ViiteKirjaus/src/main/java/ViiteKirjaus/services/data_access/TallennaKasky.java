@@ -20,6 +20,6 @@ public class TallennaKasky {
     }
     
     public void viite(Viite viite){
-        server.save(viite);
+        new SqlViiteDao(server).add(viite);
     }
 }

@@ -20,6 +20,6 @@ public class EtsiKasky {
     }
     
     public Viite viite_jonka_id(int id){
-        return server.find(Viite.class, id);
+        return new SqlViiteDao(server).findById(id);
     }
 }
