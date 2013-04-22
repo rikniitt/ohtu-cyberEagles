@@ -83,6 +83,14 @@ public class HelloController {
         return result;
     }
     
+    @RequestMapping("viite/{id}/poista")
+    public String viitePoista(@PathVariable("id") int id) {
+        Tietokanta.levylla().poista();
+        
+        return "redirect:/home";
+        
+    }
+    
     @RequestMapping("kirja/lisaa")
     public String kirjaLisaa() {
         return "kirja";

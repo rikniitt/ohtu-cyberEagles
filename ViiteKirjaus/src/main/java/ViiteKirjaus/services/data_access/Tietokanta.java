@@ -31,6 +31,10 @@ public class Tietokanta {
         return new TallennaKasky(server);
     }
     
+    public PoistaKasky poista() {
+        return new PoistaKasky(server);
+    }
+    
     public ListaaKasky listaa() {
         return new ListaaKasky(server);
     }
