@@ -23,4 +23,8 @@ public class ListaaKasky {
     public List<Viite> kaikki_viitteet() {
         return new SqlViiteDao(server).listAll();
     }
+    
+    public List<Viite> viitteet_joissa_kirjailijana(String kirjailija) {
+        return new SqlViiteDao(server).listByAuthor(kirjailija);
+    }
 }
