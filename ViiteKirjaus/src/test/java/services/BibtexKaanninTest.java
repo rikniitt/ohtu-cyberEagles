@@ -4,17 +4,15 @@
  */
 package services;
 
-import ViiteKirjaus.domain.Viite;
-import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Attribuutti;
 import ViiteKirjaus.domain.Viite;
 import ViiteKirjaus.services.BibtexKaannin;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -148,4 +146,25 @@ public class BibtexKaanninTest {
         assertEquals(attribuutteja, v.getAttribuutit().size());
     }
     
+    @Test
+    public void aakkosiaSisaltavaViiteKaannetaanLatexYhteensopivaksi()  {
+        Viite v = new Viite("book", new Attribuutti[]{
+                    new Attribuutti("id", "Ö12"),
+                    new Attribuutti("author", "Öhman J."),
+                    new Attribuutti("title", "Jääkausi"),
+                    new Attribuutti("year", "2012"),
+                    new Attribuutti("publisher", "Oy Åland Ab"),
+                    new Attribuutti("pages", "121-207")
+        });
+        
+        assertEquals(
+                "@book{\\\"{O}12,\n" +
+                "    author = {\\\"{O}hman J.},\n" +
+                "    title = {J\\\"{a}\\\"{a}kausi},\n" +
+                "    year = {2012},\n" +
+                "    publisher = {Oy \\{AA}land Ab},\n" +
+                "    pages = {121--207},\n" +
+                "}",
+                bk.kaannaAakkosetLatexMuotoon(v));
+    }
 }
